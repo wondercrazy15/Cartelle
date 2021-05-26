@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils"            
+             x:Class="Stance.Pages.Sub.SignUpComplete"
+             Title="COMPLETED SIGNUP" >
+
+    <StackLayout Spacing="0" BackgroundColor="White" >
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="20,0,20,0" Spacing="0">
+                <Image x:Name="cartelleLogo" Source="cartelle_logo_blue.png" WidthRequest="220" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="0,80,0,40"/>
+                <Label Text="Sign Up Complete" TextColor="#17191A" HorizontalTextAlignment="Center" FontSize="20" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,20"/>
+                <Label Text="Start your Program" TextColor="Black" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+
+                <StackLayout  HorizontalOptions="Center" WidthRequest="220" Spacing="0" Margin="0,80,0,20">
+                    <Button x:Name="ConfirmBtn" Text="Let's Go" Clicked="Submit_Clicked"   HeightRequest="60"  WidthRequest="220" FontSize="18" BackgroundColor="#2ecc71" BorderRadius="30" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <Label Text="You're all set, now let's start working out" TextColor="#939598" HorizontalTextAlignment="Center" FontSize="11" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                                
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</d:BaseContentPage>

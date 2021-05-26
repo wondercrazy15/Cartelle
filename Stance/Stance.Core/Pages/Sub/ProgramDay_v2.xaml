@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"   
+             x:Class="Stance.Pages.Sub.ProgramDay_v2" >
+
+    <StackLayout Spacing="0" BackgroundColor="#17191A">
+
+        <!--<StackLayout Spacing="0" BackgroundColor="Black" >
+      <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="16" FontFamily="PingFangTC-Regular" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+
+    <StackLayout Spacing="0" BackgroundColor="Black" >
+      <Label Text="WORKOUT" TextColor="White" FontSize="18" FontFamily="PingFangTC-Regular" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </StackLayout>-->
+
+        <ScrollView x:Name="MyScrollView"  Margin="0,0,0,0" >
+            <StackLayout Spacing="0">
+                <StackLayout Spacing="50" x:Name="NotLoadedYet"   VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="50,50,50,50" BackgroundColor="#17191A" >
+                    
+                    <StackLayout BackgroundColor="#17191A" Margin="0,-30,0,0" HeightRequest="40" VerticalOptions="StartAndExpand" >
+                        <Label Text="WORKOUT" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
+                               TextColor="White" FontSize="17"></Label>
+                   <BoxView HorizontalOptions="FillAndExpand" Margin="-50,0,-50,0" HeightRequest="2"
+                            Color="#CACACA"/>
+                    </StackLayout>
+                     <ActivityIndicator x:Name="Spinner2" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+                    </StackLayout>
+                <StackLayout x:Name="listOfActions" Spacing="1"  BackgroundColor="#D6D8D8" />
+            </StackLayout>
+        </ScrollView>
+
+    </StackLayout>
+
+</d:BaseContentPage>

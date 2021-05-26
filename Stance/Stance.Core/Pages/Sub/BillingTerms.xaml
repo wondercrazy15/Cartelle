@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils" 
+             x:Class="Stance.Pages.Sub.BillingTerms"
+             Title="BILLING TERMS">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="BILLING TERMS" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"  FontSize="Body"  />
+            <Image  Margin="0,0,2,0"   BackgroundColor="Transparent" WidthRequest="40"  />
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <StackLayout Spacing="0" Margin="0,50,0,0" Padding="20,0,20,10">
+        <Button x:Name="ExitBtn" Image="delete-grey.png" HorizontalOptions="End" Clicked="Close_Clicked" HeightRequest="18" WidthRequest="18" Margin="0,30,5,5" IsVisible="False" />
+
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="In App Purchase Terms" TextColor="#17191A" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,20"/>
+        </StackLayout>
+
+        <StackLayout Spacing="0" Margin="0,30,0,0">
+            <StackLayout Spacing="5" >
+                <Label Text="Recurring billing, cancel anytime." TextColor="#939598" HorizontalTextAlignment="Center" FontSize="10" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                <Label Text="Memberships include access to all programs available on the App. Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable. By continuing you accept our " TextColor="#939598" HorizontalTextAlignment="Center" FontSize="9" FontFamily="AvenirNextCondensed" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="3" HorizontalOptions="CenterAndExpand" Margin="0,-15,0,0">
+                <StackLayout Spacing="0" HorizontalOptions="Center" >
+                    <Button Text="terms of use," BackgroundColor="Transparent" Clicked="TermsOfUse_Clicked" TextColor="#939598" FontSize="8" FontFamily="AvenirNextCondensed" />
+                    <StackLayout HeightRequest="1" BackgroundColor="#939598" Margin="0,-18,0,0" />
+                </StackLayout>
+                <StackLayout Spacing="0" HorizontalOptions="Center">
+                    <Button Text="privacy policies," BackgroundColor="Transparent" Clicked="PrivacyPolicies_Clicked" TextColor="#939598" FontSize="8" FontFamily="AvenirNextCondensed" />
+                    <StackLayout HeightRequest="1" BackgroundColor="#939598" Margin="0,-18,0,0" />
+                </StackLayout>
+                <StackLayout Spacing="0" HorizontalOptions="Center">
+                    <Button Text="and billing terms." BackgroundColor="Transparent" TextColor="#939598" FontSize="8" FontFamily="AvenirNextCondensed" />
+                    <StackLayout HeightRequest="1" BackgroundColor="#939598" Margin="0,-18,0,0" />
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>       
+
+        <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand" Margin="0,25,0,0">
+            <Button x:Name="RefreshBtn" Text="Refresh In App Purchase(s)" Clicked="RefreshIAPs_Clicked" TextColor="#939598" FontSize="12" FontFamily="AvenirNextCondensed" BorderColor="#939598" BorderWidth="1" BorderRadius="25" HeightRequest="50" WidthRequest="200" />
+        </StackLayout>
+        
+    </StackLayout>
+
+</d:BaseContentPage>

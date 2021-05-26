@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"
+             x:Class="Stance.Pages.Sub.ContactPrograms">
+
+    <StackLayout Spacing="0">
+
+        <ScrollView x:Name="MyScrollView">
+            <StackLayout Spacing="0" >
+                <StackLayout x:Name="RepeatProgramSL" Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0"
+                             IsVisible="false" BackgroundColor="White" >
+
+                    <Button x:Name="RepeatBtn" Text="REPEAT PROGRAM" Clicked="RepeatProgramBtn_Clicked"
+                            Margin="0,5,0,5" HeightRequest="40" WidthRequest="160"
+                            FontSize="11" BackgroundColor="#00BBCB" BorderColor="#3E8DB2"
+                            BorderRadius="4" BorderWidth="1" TextColor="White" FontFamily="HelveticalNeue-Bold"
+                            FontAttributes="Bold" />
+
+                </StackLayout>
+                <StackLayout x:Name="listOfContactProgram" Spacing="1" BackgroundColor="#c7c7c7"  />                
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</d:BaseContentPage>

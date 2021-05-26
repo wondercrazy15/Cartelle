@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+  Title=""
+  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.AthletesPage"
+             BackgroundColor="Black">
+
+  <!--
+  <AbsoluteLayout>
+    <ActivityIndicator IsRunning="{Binding Source={x:Reference image}, Path=IsLoading }" Color="White"
+                       AbsoluteLayout.LayoutBounds="0.5,0.5,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+    <Image x:Name="image" Aspect="AspectFill"
+           AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"           
+           />
+  </AbsoluteLayout>
+-->
+
+
+    <StackLayout Padding="0,20,0,0" Spacing="10">
+
+      <Button x:Name="ButtonGetAthletes" Text="Get Athletes" />
+      <Button Text="Go to Next Page" Clicked="Handle_Clicked" />
+
+
+      <ListView x:Name="AthleteList">
+
+        <ListView.ItemTemplate>
+
+          <DataTemplate>
+
+            <ImageCell ImageSource="{Binding ImageUrl}"
+                       Text="{Binding Name}"
+                       Detail="{Binding Details}" />
+
+          </DataTemplate>
+
+        </ListView.ItemTemplate>
+
+      </ListView>
+      
+    </StackLayout>      
+
+  
+  
+  
+</ContentPage>

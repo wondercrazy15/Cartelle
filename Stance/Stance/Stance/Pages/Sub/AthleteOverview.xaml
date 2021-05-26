@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.AthleteOverview"
+             Title="PROGRAMS">
+
+  <ScrollView>
+    <StackLayout Spacing="0" >
+
+      <StackLayout Spacing="0" HeightRequest="450">
+        <RelativeLayout BackgroundColor="Black">
+
+          <Image x:Name="programImage" Source="boxer.jpg" Aspect="AspectFill"
+         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+          <ActivityIndicator x:Name="Spinner"
+                             HorizontalOptions="FillAndExpand" Color="White"
+                             IsRunning="{Binding Source={x:Reference programImage}, Path=IsLoading}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+          <StackLayout HorizontalOptions="FillAndExpand" Padding="0,70,0,0"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+            <Label x:Name="programName" Text="Athlete" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,-16" />
+            <Label Text="Name" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,0"  />
+            <Label Text="Focused on weight loss for women. Training is my passion. Let me show you how I keep in good shape and maintain it. Choose from anyone of my programs to get started." TextColor="White" FontSize="13" HorizontalTextAlignment="Center"  />
+
+            <StackLayout Orientation="Horizontal" Padding="0,35,0,0" HorizontalOptions="CenterAndExpand" Spacing="0">
+
+              <StackLayout HorizontalOptions="Start" WidthRequest="120">
+                <Image Source="facebook.jpg" HeightRequest="60" WidthRequest="60" >
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Facebook_Clicked"
+                            NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+              </StackLayout>
+
+              <StackLayout HorizontalOptions="Center" WidthRequest="120">
+                <Image Source="instagram.jpg" HeightRequest="60" WidthRequest="60"  >
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Instagram_Clicked"
+                            NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+              </StackLayout>
+
+              <StackLayout HorizontalOptions="End" WidthRequest="120">
+                <Image Source="youtube.jpg" HeightRequest="60" WidthRequest="60" >
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Youtube_Clicked"
+                            NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+              </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" Spacing="0">
+              <StackLayout HorizontalOptions="Center" WidthRequest="120">
+                <Button  x:Name="WatchVideoBtn" Text="Watch Video" Clicked="WatchVideoBtn_Clicked" Margin="0,10,0,0" HorizontalOptions="Center"  BackgroundColor="#c8e77e"  FontSize="13" TextColor="Black" BorderColor="#f1f1f1" BorderWidth="1" BorderRadius="45" HeightRequest="90" WidthRequest="90" />
+              </StackLayout>              
+            </StackLayout>
+
+          </StackLayout>
+        </RelativeLayout>
+      </StackLayout>
+
+      <StackLayout HeightRequest="60" BackgroundColor="#f1f1f1" Spacing="0">
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+          <Label Text="Programs" TextColor="Black" />
+        </StackLayout>
+      </StackLayout>
+
+      <!--      <StackLayout HeightRequest="100" BackgroundColor="White" Spacing="0" Orientation="Horizontal">
+        <StackLayout>
+          <Image Source="exercise_img.jpg" HeightRequest="100" WidthRequest="100" />
+        </StackLayout>
+
+        <StackLayout Spacing="0" Padding="10,10,10,10" VerticalOptions="Center" HorizontalOptions="StartAndExpand" >
+          <Label Text="Get Ripped Fast" TextColor="Black" FontSize="13" Margin="0,0,0,10" />
+          <Label Text="Join me on this 8 week program to get ripped fast. This is your chance to get in great shape and have fun doing it!" TextColor="Gray" FontSize="10" />
+
+        </StackLayout>
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="End" Padding="5,5,5,5" >
+          <Button Text=">" TextColor="Gray" BorderColor="Gray" BorderRadius="15" BorderWidth="3" HeightRequest="30" WidthRequest="30"  />
+        </StackLayout>
+      </StackLayout>
+
+      <StackLayout.GestureRecognizers>
+        <TapGestureRecognizer
+                Tapped="OnTapGestureRecognizerTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+        
+    </StackLayout>-->
+
+      <StackLayout x:Name="listOfPrograms" Spacing="0">
+      </StackLayout>
+
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

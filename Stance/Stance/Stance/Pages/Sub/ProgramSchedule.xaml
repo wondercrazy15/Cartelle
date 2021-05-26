@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.ProgramSchedule"
+             Title="PROGRAM SCHEDULE">
+
+  <StackLayout Spacing="0" BackgroundColor="#80bd01">
+
+    <StackLayout HeightRequest="40" BackgroundColor="#80bd01" Spacing="0">
+      <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" Orientation="Horizontal">
+        <Label x:Name="WeekText" FontSize="24" Margin="20,0,0,0" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+        <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="End">
+          <Button x:Name="NextBtn" Image="Next-26.png" Clicked="HandleSwipe" Margin="0,0,20,0"/>
+          <!--<Label Text="swipe" FontSize="24" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>-->
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+
+
+    <ListView x:Name="listView" SeparatorColor="Gray" ItemTapped="Handle_ItemTapped" Margin="0,0,0,0" HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <StackLayout HorizontalOptions="Start" VerticalOptions="CenterAndExpand" WidthRequest="75">
+                <Label Text="DAY" FontSize="15" HorizontalTextAlignment="Center" FontFamily="PingFangTC-Regular"/>
+                <Label Text="{Binding SequenceNumber}" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Medium"/>
+              </StackLayout>
+
+              <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" >
+                <Label Text="{Binding Heading}" FontSize="16" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" />
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0" IsVisible="{Binding DetailsVisible}">
+
+                  <StackLayout HorizontalOptions="Start" WidthRequest="120" Spacing="0">
+                    <Label Text="{Binding TotalExercises}" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="PingFangTC-Regular" />
+                    <Label Text="Exercises" TextColor="Black" FontSize="11" HorizontalTextAlignment="Center" FontFamily="PingFangTC-Regular"  />
+                  </StackLayout>
+
+                  <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                    <Label Text="{Binding TimeMinutes}" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="PingFangTC-Regular" />
+                    <Label Text="Approx. Time" TextColor="Black" FontSize="11" HorizontalTextAlignment="Center" FontFamily="PingFangTC-Regular"  />
+                  </StackLayout>
+
+                  <StackLayout HorizontalOptions="End" WidthRequest="120" Spacing="0">
+                    <Label Text="{Binding Level}" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="PingFangTC-Regular" />
+                    <Label Text="Level" TextColor="Black" FontSize="11" HorizontalTextAlignment="Center"  FontFamily="PingFangTC-Regular" />
+                  </StackLayout>
+
+                </StackLayout>
+              </StackLayout>
+
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+  </StackLayout>
+
+
+
+</ContentPage>

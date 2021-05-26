@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d1:BaseContentPage  xmlns:d1="clr-namespace:Stance.Utils" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"                         
+             x:Class="Stance.Pages.Sub.AthleteOverview_v1"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="ATHLETE">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label x:Name="Title" TextColor="White" HorizontalTextAlignment="Center"
+                   FontSize="Body" HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"   />
+            <Image  Margin="0,0,2,0"   BackgroundColor="Transparent" WidthRequest="40"  />
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <StackLayout Spacing="0" BackgroundColor="#17191A">
+
+        <StackLayout x:Name="SignUpHeader" HeightRequest="40" BackgroundColor="#17191A" Spacing="0" IsVisible="False"  Margin="0,40,0,0" Padding="0,0,0,5">
+            <StackLayout Spacing="0" >
+                <Button BackgroundColor="Transparent" Image="Arrow_26.png"  Clicked="Close_Clicked" HorizontalOptions="Start"  HeightRequest="25" WidthRequest="25" Rotation="180" Margin="20,0,0,0"  />
+            </StackLayout>
+            <StackLayout x:Name="LogoSL" HorizontalOptions="CenterAndExpand" Margin="0,-35,0,0" >
+                <Label x:Name="athleteName" FontSize="22" TextColor="White" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="0,10,0,0"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Spacing="0" BackgroundColor="#17191A" >
+            <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="13" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+        <StackLayout Spacing="0" BackgroundColor="#17191A">
+
+            <ScrollView>
+                <StackLayout Spacing="0" >
+
+                    <StackLayout x:Name="AthleteRow" Spacing="0" >
+                        <RelativeLayout BackgroundColor="#909090">
+
+                            <ffimageloading:CachedImage x:Name="accountImage" Aspect="AspectFill"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+                            <!--<Image x:Name="accountImage" Aspect="AspectFill"
+             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />-->
+
+                            <ActivityIndicator x:Name="Spinner"
+                                 HorizontalOptions="FillAndExpand" Color="White"
+                                 IsRunning="{Binding Source={x:Reference accountImage}, Path=IsLoading}"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+                            <StackLayout x:Name="DetailsSL" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="70,260,70,20" Spacing="0"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+                                <StackLayout Spacing="0" Margin="0,0,0,15" Padding="15,10,15,10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#555757" Opacity="0.60">
+                                    <Label x:Name="SubHeading" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="End" Spacing="0">
+                                    <!--<Label Text="MEET YOUR TRAINER" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"  IsVisible="False" />-->
+                                    <Button x:Name="WatchVideoBtn" Text="MEET YOUR TRAINER" Clicked="WatchVideoBtn_Clicked" Margin="0,0,0,15" HeightRequest="36" WidthRequest="200" FontSize="13" BackgroundColor="#00BBCB" BorderColor="#3E8DB2" BorderRadius="18" BorderWidth="1" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </RelativeLayout>
+                    </StackLayout>
+
+                    <StackLayout x:Name="ProgramTitleBar" HeightRequest="32" BackgroundColor="#17191A" Spacing="0">
+                        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Label x:Name="ProgramSectionTitle" Text="PROGRAMS" TextColor="White" FontSize="16" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout x:Name="NotLoadedYet" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="50,50,50,50" BackgroundColor="#17191A" >
+                        <ActivityIndicator x:Name="Spinner2" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="listOfPrograms" Spacing="0" />
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+
+
+</d1:BaseContentPage>

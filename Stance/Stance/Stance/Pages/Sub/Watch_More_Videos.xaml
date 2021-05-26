@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:o="clr-namespace:Octane.Xam.VideoPlayer;assembly=Octane.Xam.VideoPlayer" 
+             x:Class="Stance.Pages.Sub.Watch_More_Videos">
+
+  <AbsoluteLayout BackgroundColor="Black" x:Name="MainContainer">
+
+    <o:VideoPlayer x:Name="VideoPlayID" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" AutoPlay="True" DisplayControls="False" FillMode="ResizeAspectFill" Repeat="True" />
+
+    <StackLayout AbsoluteLayout.LayoutBounds="1,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" >
+      <StackLayout Padding="0,15,15,0">
+        <Button Text="x" TextColor="Black" FontSize="20" FontAttributes="Bold" Clicked="ExitBtn_Clicked" />
+      </StackLayout>
+    </StackLayout>
+
+  </AbsoluteLayout>
+  
+</ContentPage>

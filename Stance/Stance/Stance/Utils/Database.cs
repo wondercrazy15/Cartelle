@@ -1,0 +1,370 @@
+﻿using FFImageLoading;
+using FFImageLoading.Cache;
+using PCLStorage;
+using SQLite;
+using Stance.Models.LocalDB;
+using System;
+using System.Linq;
+using Xamarin.Forms;
+
+namespace Stance.Utils.LocalDB
+{
+    public static class Database
+    {
+        private static SQLiteAsyncConnection _connection;
+
+        public async static void ClearAsync()
+        {
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+
+            await _connection.CreateTableAsync<LocalDBContactV2>();
+            await _connection.CreateTableAsync<LocalDBAccount>();
+            await _connection.CreateTableAsync<LocalDBAction>();
+            await _connection.CreateTableAsync<LocalDBActionContentV2>();
+            await _connection.CreateTableAsync<LocalDBAudio>();
+            await _connection.CreateTableAsync<LocalDBAudioContentV2>();
+            await _connection.CreateTableAsync<LocalDBContactAction>();
+            await _connection.CreateTableAsync<LocalDBContactProgram>();
+            await _connection.CreateTableAsync<LocalDBContactProgramDayV2>();
+            await _connection.CreateTableAsync<LocalDBProgram>();
+            await _connection.CreateTableAsync<LocalDBProgramDay>();
+
+            var p = await _connection.Table<LocalDBProgram>().ToListAsync();
+            foreach (var c in p)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var cp = await _connection.Table<LocalDBContactProgram>().ToListAsync();
+            foreach (var c in cp)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var pd = await _connection.Table<LocalDBProgramDay>().ToListAsync();
+            foreach (var c in pd)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var csade = await _connection.Table<LocalDBContactProgramDayV2>().ToListAsync();
+            foreach (var c in csade)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var cccade = await _connection.Table<LocalDBContactAction>().ToListAsync();
+            foreach (var c in cccade)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var acade = await _connection.Table<LocalDBAction>().ToListAsync();
+            foreach (var c in acade)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var ccade = await _connection.Table<LocalDBActionContentV2>().ToListAsync();
+            foreach (var c in ccade)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var audc = await _connection.Table<LocalDBAudioContentV2>().ToListAsync();
+            foreach (var c in audc)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var aud = await _connection.Table<LocalDBAudio>().ToListAsync();
+            foreach (var c in aud)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var profile = await _connection.Table<LocalDBContactV2>().ToListAsync();
+            foreach (var c in profile)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var contactprog = await _connection.Table<LocalDBContactProgram>().ToListAsync();
+            foreach (var c in contactprog)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            var cades = await _connection.Table<LocalDBAccount>().ToListAsync();
+            foreach (var c in cades)
+            {
+                await _connection.DeleteAsync(c);
+            }
+
+            //Below should not cause the App Center SDK to crash, because it does not delete its associated folders
+            IFolder rootFolder = FileSystem.Current.LocalStorage;
+            var folders = await rootFolder.GetFoldersAsync();
+            var foldersToReview = folders.ToList();
+            foreach (var folder in foldersToReview)
+            {
+                try
+                {
+                    if (folder.Name.Equals("Application Support"))
+                    {
+                        continue; //this fodler only contains /com.microsoft.appcenter. if deleted the App Center SDK crashes
+                    }
+                    else if (folder.Name.Equals("Caches"))
+                    {
+                        var subfolders = await folder.GetFoldersAsync();
+                        // com.bethestance.Stance
+                        // com.microsoft.appcenter
+                        // com.plausiblelabs.crashreporter.data
+                        foreach (var subFolder in subfolders)
+                        {
+                            if (!subFolder.Name.Equals("com.microsoft.appcenter") && !subFolder.Name.Equals("com.plausiblelabs.crashreporter.data"))
+                            {
+                                await subFolder.DeleteAsync(); //only delete things that are not related to App Center
+                            }
+                        }
+                    }
+                    else if (folder.Name.Equals("Cookies"))
+                    {
+                        await folder.DeleteAsync(); // this folder contains /com.bethestance.Stance.binarycookies file which is what we want to clear
+                    }
+                    else if (folder.Name.Equals("Preferences"))
+                    {
+                        continue; //this folder contains the info.plist file for the app
+                    }
+                    else
+                    {
+                        await folder.DeleteAsync(); //delete any other folder that has been creates in the app such as ContactProgramDays
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //usually error is thrown if the folder is already deleted
+                    var err = ex.ToString();
+                }
+            }
+
+            try
+            {
+                await ImageService.Instance.InvalidateCacheAsync(CacheType.All);
+            }
+            catch (Exception ex)
+            {
+                var err = ex.ToString();
+            }
+
+            //below throws an error
+            //try
+            //{
+            //    await rootFolder.DeleteAsync();
+            //} catch (Exception ex)
+            //{
+            //    await DisplayAlert("ERROR", "Report issue to app developer: " + _PageName, "OK");
+            //}
+        }
+
+        public async static void CreateAsync()
+        {
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+
+            await _connection.CreateTableAsync<LocalDBAccount>();
+            await _connection.CreateTableAsync<LocalDBProgram>();
+            await _connection.CreateTableAsync<LocalDBContactProgram>();
+            await _connection.CreateTableAsync<LocalDBProgramDay>();
+            await _connection.CreateTableAsync<LocalDBContactProgramDayV2>();
+            await _connection.CreateTableAsync<LocalDBAction>();
+            await _connection.CreateTableAsync<LocalDBContactV2>();
+            await _connection.CreateTableAsync<LocalDBContactProgram>();
+            await _connection.CreateTableAsync<LocalDBActionContentV2>();
+            await _connection.CreateTableAsync<LocalDBContactAction>();
+            await _connection.CreateTableAsync<LocalDBAudio>();
+            await _connection.CreateTableAsync<LocalDBAudioContentV2>();
+        }
+
+        public async static void UpdateCPDs()
+        {
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await _connection.CreateTableAsync<LocalDBContactProgramDayV2>();
+
+            try
+            {
+                var ContactProgramDays = await _connection.Table<LocalDBContactProgramDay>().ToListAsync();
+                if (ContactProgramDays.Count() != 0)
+                {
+                    foreach (var item in ContactProgramDays)
+                    {
+                        var ContactProgramDay = new LocalDBContactProgramDayV2
+                        {
+                            Id = item.Id,
+                            ProgramDayId = item.ProgramDayId,
+                            ContactProgramId = item.ContactProgramId,
+                            IsComplete = item.IsComplete,
+                            IsDownloaded = item.IsDownloaded,
+                            DownloadedOn = item.DownloadedOn,
+                            ReceivedOn = item.ReceivedOn,
+                            ScheduledStartDate = item.ScheduledStartDate,
+                            ActualStartDate = item.ActualStartDate,
+                            PercentComplete = item.PercentComplete,
+                            NumberOfDownloads = item.NumberOfDownloads,
+                            Rating = item.Rating,
+                            Synced = item.Synced,
+                            SequenceNumber = item.SequenceNumber,
+                            DayTypeValue = item.DayTypeValue,
+                            GuidCRM = item.GuidCRM,
+                            StateCodeValue = item.StateCodeValue,
+                            StatusCodeValue = item.StatusCodeValue
+                        };
+                        await _connection.InsertAsync(ContactProgramDay);
+                        await _connection.DeleteAsync(item);
+                    }
+                }
+                await _connection.DropTableAsync<LocalDBContactProgramDay>();
+
+            }
+            catch (Exception ex)
+            {
+                var error = ex.ToString();
+            }
+        }
+
+        public async static void UpdateACs()
+        {
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await _connection.CreateTableAsync<LocalDBActionContentV2>();
+
+            try
+            {
+                var ActionContents = await _connection.Table<LocalDBActionContent>().ToListAsync();
+                if (ActionContents.Count() != 0)
+                {
+                    foreach (var item in ActionContents)
+                    {
+                        var ActionContent = new LocalDBActionContentV2
+                        {
+                            Id = item.Id,
+                            ProgramId = item.ProgramId,
+                            PhotoFilePath = item.PhotoFilePath,
+                            VideoFilePath = item.VideoFilePath,
+                            ContentType = item.ContentType,
+                            ContentTypeValue = item.ContentTypeValue,
+                            Heading = item.Heading,
+                            SubHeading = item.SubHeading,
+                            NumberOfReps = item.NumberOfReps,
+                            WeightLbs = item.WeightLbs,
+                            TimeSeconds = item.TimeSeconds,
+                            Intensity = item.Intensity,
+                            IntensityValue = item.IntensityValue,
+                            PhotoUrl = item.PhotoUrl,
+                            VideoUrl = item.VideoUrl,
+                            IsPreview = false, //set this because you know that the previous databse version
+                            GuidCRM = item.GuidCRM,
+                            StateCodeValue = item.StateCodeValue,
+                            StatusCodeValue = item.StatusCodeValue
+                        };
+                        await _connection.InsertAsync(ActionContent);
+                        await _connection.DeleteAsync(item);
+                    }
+                }
+                await _connection.DropTableAsync<LocalDBActionContent>();
+
+            }
+            catch (Exception ex)
+            {
+                var error = ex.ToString();
+            }
+
+        }
+
+        public async static void UpdateAuCs()
+        {
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await _connection.CreateTableAsync<LocalDBAudioContentV2>();
+
+            try
+            {
+                var AudioContents = await _connection.Table<LocalDBAudioContent>().ToListAsync();
+                if (AudioContents.Count() != 0)
+                {
+                    foreach (var item in AudioContents)
+                    {
+                        var AudioContent = new LocalDBAudioContentV2
+                        {
+                            Id = item.Id,
+                            AudioFilePath = item.AudioFilePath,
+                            LengthMilliseconds = item.LengthMilliseconds,
+                            AudioUrl = item.AudioUrl,
+                            GuidCRM = item.GuidCRM,
+                            StateCodeValue = item.StateCodeValue,
+                            StatusCodeValue = item.StatusCodeValue
+                        };
+                        await _connection.InsertAsync(AudioContent);
+                        await _connection.DeleteAsync(item);
+                    }
+                }
+                await _connection.DropTableAsync<LocalDBAudioContent>();
+
+            }
+            catch (Exception ex)
+            {
+                var error = ex.ToString();
+            }
+
+        }
+
+        public async static void UpdateProfile()
+        {
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await _connection.CreateTableAsync<LocalDBContactV2>();
+
+            try
+            {
+                var Profile = await _connection.Table<LocalDBContact>().FirstOrDefaultAsync();
+                if (Profile != null)
+                {
+                    var new_Profile = new LocalDBContactV2
+                    {
+                        Id = Profile.Id,
+                        ProfilePhotoFilePath = Profile.ProfilePhotoFilePath,
+                        BeforePhotoFilePath = Profile.BeforePhotoFilePath,
+                        AfterPhotoFilePath = Profile.AfterPhotoFilePath,
+                        ProfileVideoFilePath = Profile.ProfileVideoFilePath,
+                        FirstName = Profile.FirstName,
+                        LastName = Profile.LastName,
+                        Email = Profile.Email,
+                        Password = Profile.Password,
+                        IsAdmin = Profile.IsAdmin,
+                        Birthday = Profile.Birthday,
+                        GenderTypeCode = Profile.GenderTypeCode,
+                        Gender = Profile.Gender,
+                        HeightCm = Profile.HeightCm,
+                        WeightLbs = Profile.WeightLbs,
+                        TrainingGoalTypeCode = Profile.TrainingGoalTypeCode,
+                        TrainingGoal = Profile.TrainingGoal,
+                        RegionTypeCode = Profile.RegionTypeCode,
+                        Region = Profile.Region,
+                        InstagramHandle = "",
+                        GuidCRM = Profile.GuidCRM,
+                        StateCodeValue = Profile.StateCodeValue,
+                        StatusCodeValue = Profile.StatusCodeValue
+                    };
+                    await _connection.InsertAsync(new_Profile);
+                    await _connection.DeleteAsync(Profile);
+                }
+                await _connection.DropTableAsync<LocalDBContact>();
+            }
+            catch (Exception ex)
+            {
+                var error = ex.ToString();
+            }
+        }
+
+
+
+
+
+
+    }
+}

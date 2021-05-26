@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.EditWorkoutSchedule">
+
+    <StackLayout Spacing="0">
+
+        <StackLayout HeightRequest="40" BackgroundColor="#007077" HorizontalOptions="FillAndExpand" Spacing="0" Orientation="Horizontal" Padding="10,15,10,0">
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="0">
+                <Label Text="EDIT SCHEDULE" FontSize="24" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="25,0,0,0" />
+            </StackLayout>
+            <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="End" Spacing="0">
+                <Button Image="Delete-32.png" HorizontalOptions="End" Clicked="ExitBtn_Clicked" TextColor="Black" FontSize="20"   />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout>
+            <StackLayout x:Name="listOfContactProgramDays" Spacing="0" />
+        </StackLayout>
+
+        <StackLayout x:Name="SaveSL" Orientation="Horizontal" Padding="13,0" BackgroundColor="#007077" Spacing="15" >
+            <Button x:Name="SaveText" Text="SAVE" Clicked="SaveProfile_Btn" TextColor="White" FontSize="22" FontFamily="AvenirNextCondensed-Bold" HorizontalOptions="CenterAndExpand"/>
+            <ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

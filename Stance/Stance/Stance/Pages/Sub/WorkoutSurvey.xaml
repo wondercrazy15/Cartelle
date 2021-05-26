@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"
+             x:Class="Stance.Pages.Sub.WorkoutSurvey">
+
+    <StackLayout BackgroundColor="#007077">
+        <StackLayout Padding="0,130,0,0" >
+            <Label Text="CONGRATULATIONS!" FontSize="32" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label Text="on completing this workout" FontSize="20" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Label Text="Rate this Workout" FontSize="26" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="star1" Clicked="Star1Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                <Button x:Name="star2" Clicked="Star2Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                <Button x:Name="star3" Clicked="Star3Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                <Button x:Name="star4" Clicked="Star4Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                <Button x:Name="star5" Clicked="Star5Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+
+                <!--<Editor HeightRequest="100" Placeholder="Have comments? Enter them here..." />-->
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
+                <StackLayout HorizontalOptions="StartAndExpand"  >
+                    <Label Text="BAD" TextColor="White"  FontSize="14" HorizontalTextAlignment="Start" Margin="5,0,0,0" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="End" >
+                    <Label Text="GREAT" TextColor="White" FontSize="14" HorizontalTextAlignment="End" Margin="5,0,0,0" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+
+        <StackLayout Padding="0,0,0,100" x:Name="ThankYou" >
+            <Label Text="THANK YOU!" FontSize="40" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <ActivityIndicator x:Name="SpinnerLoading" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+        </StackLayout>
+
+    </StackLayout>
+
+</d:BaseContentPage>

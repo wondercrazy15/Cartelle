@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="bethestance.Stance" android:installLocation="auto" android:versionName="1.0.5" android:versionCode="6">
+	<uses-sdk android:targetSdkVersion="29" android:minSdkVersion="22" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.android.vending.BILLING" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<application android:label="Cartelle" android:hardwareAccelerated="false" android:largeHeap="true" android:icon="@mipmap/ic_launcher"></application>
+</manifest>

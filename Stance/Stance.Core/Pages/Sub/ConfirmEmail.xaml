@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"                   
+             x:Class="Stance.Pages.Sub.ConfirmEmail"
+             Title="CONFIRM EMAIL" >
+
+    <StackLayout Spacing="0" BackgroundColor="White" >
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="20,0,20,0" Spacing="0">
+                <Image x:Name="cartelleLogo" Source="cartelle_logo_blue.png" WidthRequest="220" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="0,80,0,40"/>
+                <Label Text="Confirm your Email" TextColor="#17191A" HorizontalTextAlignment="Center" FontSize="20" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,20"/>
+                <Label Text="Click 'Confirm Email' in the email we sent you" TextColor="Black" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+
+                <StackLayout  HorizontalOptions="Center" WidthRequest="220" Spacing="0" Margin="0,60,0,20">
+                    <Button x:Name="ConfirmBtn" Text="CONFIRM EMAIL" Clicked="Submit_Clicked"   HeightRequest="60"  WidthRequest="220" FontSize="18" BackgroundColor="#2ecc71" BorderRadius="30" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                </StackLayout>
+                <Label Text="You must confirm your email before starting your program" TextColor="#939598" HorizontalTextAlignment="Center" FontSize="11" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                <StackLayout Spacing="0" Margin="0,60,0,0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" Spacing="0">
+                        <Label Text="Didn't receive the email," TextColor="#939598" VerticalOptions="Center" FontSize="10" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                        <Button x:Name="ResendBtn" Text="resend it" Clicked="Resend_Clicked"  WidthRequest="60" HeightRequest="15" FontSize="10" TextColor="#2ecc71"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"  VerticalOptions="Center"/>
+                    </StackLayout>
+                    <Button x:Name="LogoutBtn" Text="Use a different email" Clicked="DiffEmail_Clicked"  WidthRequest="250" HeightRequest="15" FontSize="11" TextColor="#00BBCB"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label x:Name="EmailAddress" TextColor="#939598" HorizontalTextAlignment="Center" FontSize="11" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,10,0,0" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</d:BaseContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils"   
+             x:Class="Stance.Pages.Sub.RecommendedBy"
+             Title="RECOMMENDED BY" >
+    
+    <AbsoluteLayout BackgroundColor="#24394C" >
+        <StackLayout x:Name="ScrollSL" IsEnabled="False" Opacity="0.7" Spacing="0" BackgroundColor="#24394C"  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Margin="0,0,0,60" >
+            <ScrollView>
+                <StackLayout Spacing="0">
+                    <StackLayout Spacing="0" Orientation="Horizontal" Margin="{OnPlatform Android='20,20,0,0',iOS='20,40,0,0'}"  VerticalOptions="CenterAndExpand">
+                        <StackLayout VerticalOptions="CenterAndExpand" Spacing="0" HorizontalOptions="Start" BackgroundColor="Transparent">
+                            <Button BackgroundColor="Transparent" Image="Arrow_26.png" Clicked="Close_Clicked" HorizontalOptions="Start"  HeightRequest="25" WidthRequest="25" Rotation="180" />
+                        </StackLayout>
+                        <StackLayout Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Margin="20,0,0,0">
+                            <Label Text="Choose An Athlete" VerticalTextAlignment="Center" Font="AvenirNextCondensed-Bold" FontSize="24" TextColor="White" HorizontalOptions="StartAndExpand" />
+                            <!--<Label Text="" Font="AvenirNextCondensed-Bold" FontSize="24" TextColor="White" HorizontalOptions="Start" />-->
+                        </StackLayout>
+                    </StackLayout>
+
+                    <ActivityIndicator x:Name="Spinner2" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True"  Margin="0,200,0,0"/>
+                    <StackLayout x:Name="AthleteSL" Spacing="0" Margin="0,22,0,10" HorizontalOptions="CenterAndExpand" >
+                        <StackLayout x:Name="listOfAthletes" Spacing="7" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+        <StackLayout x:Name="LogoSL" IsEnabled="False" Opacity="0.7" AbsoluteLayout.LayoutBounds="0,1,1,60" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" BackgroundColor="#355167">
+            <StackLayout Spacing="3" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <!--<Label x:Name="RecommendedText" Text="I wasn't recommended." TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="15" FontFamily="HelveticalNeue-Bold" />-->
+                <Button Text="Personalize My Program Setup" Clicked="No_Clicked"  HeightRequest="42"  WidthRequest="300" BorderWidth="1"  FontSize="16" BackgroundColor="Transparent" BorderColor="#00bac6" BorderRadius="21" TextColor="#00bac6" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="modalPopup" Spacing="0" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0.5,0.5,1,250" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" Padding="20,20,20,20" Margin="50,0,50,0">
+            <Label Text="Let's get you setup on a program" TextColor="#17191A" HorizontalTextAlignment="Center"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="16" FontFamily="HelveticalNeue-Bold" />
+            <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="0,25,0,0">
+                <Button x:Name="YesBtn" Clicked="Yes_Clicked" Text="Choose By Athlete"   HeightRequest="40"  WidthRequest="280" FontSize="15" BackgroundColor="#3E8DB2" BorderRadius="20" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                <Button x:Name="NOBtn" Clicked="No_Clicked" Text="Personalized Setup"  HeightRequest="40"  WidthRequest="280" FontSize="15" BackgroundColor="#00BBCB" BorderRadius="20" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+            </StackLayout>            
+        </StackLayout>
+    </AbsoluteLayout>
+
+</d:BaseContentPage>

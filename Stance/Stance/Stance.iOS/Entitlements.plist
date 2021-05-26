@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>thecartelle.com</string>
+		<string>cartelleapi.azurewebsites.net</string>
+		<string>thecartelle.blob.core.windows.net</string>
+		<string>thecartelle.azureedge.net</string>
+		<string>applinks:thecartelle.app.link</string>
+		<string>applinks:thecartelle-alternate.app.link</string>
+		<string>cartelleapp.com</string>
+	</array>
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)Cartelle</string>
+	</array>
+</dict>
+</plist>

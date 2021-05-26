@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             xmlns:o="clr-namespace:Octane.Xam.VideoPlayer;assembly=Octane.Xam.VideoPlayer"
+             xmlns:local="clr-namespace:Stance.MarkupExtensions;"
+             x:Class="Stance.Pages.Sub.ExercisePage">
+
+
+  <AbsoluteLayout BackgroundColor="Black" x:Name="MainContainer">
+
+    <o:VideoPlayer x:Name="VideoPlayID" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" AutoPlay="True" DisplayControls="False" FillMode="ResizeAspectFill" Repeat="True" Volume="0"/>
+   
+    <StackLayout Padding="0,40,0,0" Orientation="Horizontal" HorizontalOptions="Center" Spacing="70" AbsoluteLayout.LayoutBounds="0,0,1,50" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" >
+        <StackLayout  HorizontalOptions="Center">
+          <Label Text="12:45" TextColor="Black" FontSize="Large" HorizontalOptions="Center"/>
+        </StackLayout>
+
+      <StackLayout  HorizontalOptions="Center">
+        <Label Text="EXERCISE" TextColor="Black" HorizontalOptions="Center"/>
+      </StackLayout>
+
+        <StackLayout HorizontalOptions="Center">
+          <Button x:Name="VideoControl" BackgroundColor="#fafafa" Text="||" FontSize="Large" TextColor="Black" BorderColor="Black" BorderWidth="4" BorderRadius="25" HeightRequest="50" WidthRequest="50" HorizontalOptions="LayoutOptions.Center"/>
+        </StackLayout>
+    </StackLayout>
+    
+    
+    
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="50" AbsoluteLayout.LayoutBounds="0,1,1,0.15" AbsoluteLayout.LayoutFlags="All" >      
+        <StackLayout HorizontalOptions="Center">
+          <Label Text="REPS" TextColor="Black" HorizontalOptions="Center" />
+          <Label Text="{Binding Source={x:Reference reps}, Path=Value}" TextColor="Black" FontSize="Large" HorizontalOptions="Center" />
+        <Stepper x:Name="reps" Value="15" Increment="1" BackgroundColor="#fafafa" />        
+      </StackLayout>
+
+      <StackLayout HorizontalOptions="Center" >
+        <Button BackgroundColor="#7fbf7f" Text="✓" FontSize="Large" TextColor="White" BorderColor="Green" BorderWidth="5" BorderRadius="30" Clicked="ExerciseComplete_Clicked" HeightRequest="60" WidthRequest="60" />
+      </StackLayout>
+
+        <StackLayout HorizontalOptions="Center">
+          <Label Text="WEIGHT" TextColor="Black" HorizontalOptions="Center"/>
+          <Label Text="{Binding Source={x:Reference weight}, Path=Value}" TextColor="Black" FontSize="Large" HorizontalOptions="Center"/>
+        <Stepper x:Name="weight" Value="25" Increment="5" BackgroundColor="#fafafa" />
+      </StackLayout>     
+    </StackLayout>
+
+    <Button x:Name="ExitBtn" Clicked="ExitBtn_Clicked" AbsoluteLayout.LayoutBounds="0.5,0.5,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#ff7f7f" Text="Exit" FontSize="Large" TextColor="Black" BorderColor="Black" BorderWidth="4" BorderRadius="50" HeightRequest="100" WidthRequest="100" />
+
+  </AbsoluteLayout>
+</ContentPage>

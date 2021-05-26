@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.LoginSignUpPage">
+
+  <StackLayout Spacing="0" BackgroundColor="#007077" >
+    <StackLayout Spacing="0" BackgroundColor="Black" >
+      <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="13" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+    
+    <ScrollView>
+
+      <StackLayout Spacing="0">
+
+        <StackLayout Spacing="0" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,20,0">
+          <Button Image="Delete-32.png" Clicked="ExitBtn_Clicked" />
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Spacing="0" WidthRequest="260" >
+
+          <Label x:Name="ProgramMessage" FontSize="16" TextColor="White" FontFamily="PingFangTC-Regular" Margin="0,0,0,20" HorizontalTextAlignment="Center" />
+          <Label x:Name="FormValidationSpecialMessage" TextColor="Red" HorizontalTextAlignment="Center" FontSize="13" FontFamily="AvenirNextCondensed-Bold"/>
+          
+          <ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+          
+          <StackLayout x:Name="JoinNowSL" Spacing="6">
+            <Label x:Name="JoinNowTitle" Text="JOIN NOW" FontSize="26" HorizontalTextAlignment="Center" Margin="0,20,0,20" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" TextColor="White"/>
+            <Entry x:Name="FirstName" Keyboard="Text" Placeholder="First Name" />
+            <Entry x:Name="LastName" Keyboard="Text" Placeholder="Last Name" />
+            <Entry x:Name="Email" Keyboard="Email" Placeholder="Email" />
+            <Entry x:Name="Password" Keyboard="Text" Placeholder="Password" IsPassword="True" />
+            <Picker x:Name="TimeZone" Title="Time Zone" />
+            <Label x:Name="TandCMessage" FontSize="8" TextColor="White" Margin="0,5,0,5"/>
+            <Button x:Name="JoinNowBtn" Text="JOIN NOW" FontSize="22" BorderColor="White" BorderWidth="1" TextColor="White" Clicked="JoinSubmitted" FontFamily="AvenirNextCondensed-Bold"/>
+            <Label Text="- or -" TextColor="#939598" HorizontalTextAlignment="Center" />
+            <Button x:Name="ShowSignIn_Btn" Text="SIGN IN" FontSize="22" BorderColor="#939598" BorderWidth="1" TextColor="#939598" Clicked="ShowSignIn" FontFamily="AvenirNextCondensed-Bold"/>
+          </StackLayout>
+
+          <StackLayout x:Name="SignInSL" Spacing="6">
+            <Label x:Name="SignInTitle" Text="SIGN IN" FontSize="26" HorizontalTextAlignment="Center"  Margin="0,20,0,20" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" TextColor="White"/>
+            <Entry x:Name="Email_SignIn" Keyboard="Email" Placeholder="Email" />
+            <Entry x:Name="Password_SignIn" Keyboard="Text" Placeholder="Password" IsPassword="True" />
+            <Button x:Name="SignInBtn" Text="SIGN IN" FontSize="22" BorderColor="White" BorderWidth="1" TextColor="White" Clicked="SignInSubmitted" FontFamily="AvenirNextCondensed-Bold"/>
+            <Label Text="- or -" TextColor="#939598" HorizontalTextAlignment="Center" FontFamily="PingFangTC-Regular"/>
+            <Button x:Name="ShowJoinNow_Btn" Text="JOIN NOW" FontSize="22" BorderColor="#939598" BorderWidth="1" TextColor="#939598" Clicked="ShowJoinNow" FontFamily="AvenirNextCondensed-Bold" />
+          </StackLayout>
+
+
+        </StackLayout>
+
+      </StackLayout>
+
+
+    </ScrollView>
+
+  </StackLayout>
+</ContentPage>

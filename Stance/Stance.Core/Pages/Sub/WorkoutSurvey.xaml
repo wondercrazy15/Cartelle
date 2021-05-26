@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils"   
+             x:Class="Stance.Pages.Sub.WorkoutSurvey">
+
+
+    <AbsoluteLayout>
+        <Image Source="blurredBG3x.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+        <StackLayout Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Margin="0,80,0,0" >
+                    <Label Text="CONGRATULATIONS" FontSize="26" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Label Text="on completing this workout" FontSize="16" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="15,15,15,15" BackgroundColor="#1C516B" Opacity="0.8" >
+                    <Label Text="Rate this Workout" FontSize="22" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Button x:Name="star1" BackgroundColor="Transparent" Clicked="Star1Btn_Clicked"
+                                HeightRequest="50" WidthRequest="50" />
+                        <Button x:Name="star2" BackgroundColor="Transparent" Clicked="Star2Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                        <Button x:Name="star3" BackgroundColor="Transparent" Clicked="Star3Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                        <Button x:Name="star4" BackgroundColor="Transparent" Clicked="Star4Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                        <Button x:Name="star5" BackgroundColor="Transparent" Clicked="Star5Btn_Clicked" HeightRequest="50" WidthRequest="50" />
+                        <!--<Editor HeightRequest="100" Placeholder="Have comments? Enter them here..." />-->
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
+                        <StackLayout HorizontalOptions="StartAndExpand"  >
+                            <Label Text="BAD" TextColor="White"  FontSize="12" HorizontalTextAlignment="Start" Margin="5,0,0,0" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="End" >
+                            <Label Text="GREAT" TextColor="White" FontSize="12" HorizontalTextAlignment="End" Margin="5,0,0,0" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout x:Name="ThankYou" Spacing="0" VerticalOptions="End">
+                    <Label Text="THANK YOU!" FontSize="22" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <StackLayout HorizontalOptions="Center" Spacing="20" Margin="0,15,0,10" >
+                        <Button x:Name="ShareBtn" Text="SHARE MY PROGRESS" Clicked="ShareBtn_Clicked"  HeightRequest="50"  WidthRequest="200" FontSize="13" BackgroundColor="#1C516B" BorderRadius="25" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                        <Button x:Name="ExitBtn" Text="DONE" Clicked="ExitButton_Clicked"  HeightRequest="50"  WidthRequest="100" FontSize="13" BackgroundColor="#3E8DB2" BorderRadius="25" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <!--<ActivityIndicator x:Name="SpinnerLoading" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />-->
+                </StackLayout>
+
+        </StackLayout>
+    </AbsoluteLayout>
+
+
+
+</d:BaseContentPage>

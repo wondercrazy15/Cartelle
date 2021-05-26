@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MediaManager</name>
+    </assembly>
+    <members>
+        <member name="T:MediaManager.CrossMediaManager">
+            <summary>
+            Cross MediaManager
+            </summary>
+        </member>
+        <member name="P:MediaManager.CrossMediaManager.IsSupported">
+            <summary>
+            Gets if the plugin is supported on the current platform.
+            </summary>
+        </member>
+        <member name="P:MediaManager.CrossMediaManager.Current">
+            <summary>
+            Current plugin implementation to use
+            </summary>
+        </member>
+        <member name="P:MediaManager.IMediaManager.RequestHeaders">
+            <summary>
+            Gets or sets the request headers.
+            </summary>
+        </member>
+        <member name="M:MediaManager.IMediaManager.Play(MediaManager.Library.IMediaItem)">
+            <summary>
+            Plays a media item
+            </summary>
+        </member>
+        <member name="M:MediaManager.IMediaManager.Play(System.String)">
+            <summary>
+            Plays an uri that can be both remote or local
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.IMediaManager.PlayFromAssembly(System.String,System.Reflection.Assembly)">
+            <summary>
+            Plays an embeded resource
+            </summary>
+            <param name="resourceName"></param>
+            <param name="assembly"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.IMediaManager.PlayFromResource(System.String)">
+            <summary>
+            Plays a native resource
+            </summary>
+            <param name="resourceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.IMediaManager.Play(System.Collections.Generic.IEnumerable{MediaManager.Library.IMediaItem})">
+            <summary>
+            Plays a list of media items
+            </summary>
+            <param name="mediaItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.IMediaManager.Play(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Plays a list of uri's
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.IMediaManager.Play(System.IO.FileInfo)">
+            <summary>
+            Plays a file from the local file system
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.IMediaManager.Play(System.IO.DirectoryInfo)">
+            <summary>
+            Plays all files inside the directory
+            </summary>
+            <param name="directoryInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.IMediaManager.Play(System.IO.Stream,System.String)">
+            <summary>
+            Plays media from a Stream. The cacheName name must be a valid media name, like: something.mp4
+            </summary>
+            <param name="stream"></param>
+            <param name="cacheName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.IsMetadataExtracted">
+            <summary>
+            Gets or sets a value indicating whether [metadata extracted].
+            </summary>
+            <value>
+              <c>true</c> if [metadata extracted]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:MediaManager.Library.IMediaItem.MetadataUpdated">
+            <summary>
+            Raised when MediaItem is updated
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Advertisement">
+            <summary>
+            The metadata for a int typed value to retrieve the information about whether the media is an advertisement.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Album">
+            <summary>
+            The metadata for the Album title.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.AlbumArtist">
+            <summary>
+            The metadata for the artist for the Album of the media's original source.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.AlbumImage">
+            <summary>
+            The metadata for a Bitmap typed value to retrieve the information about the artwork for the Album of the media's original source.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.AlbumImageUri">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the Uri of the artwork for the Album of the media's original source.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Artist">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the artist of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Image">
+            <summary>
+            The metadata for a Bitmap typed value to retrieve the information about the artwork for the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.ImageUri">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about Uri of the artwork for the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Author">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the author of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Compilation">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the compilation status of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Composer">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the composer of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Date">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the date the media was created or published.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.DiscNumber">
+            <summary>
+            The metadata for a int typed value to retrieve the information about the disc number for the media's original source.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.DisplayDescription">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the description that is suitable for display to the user.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.DisplaySubtitle">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the subtitle that is suitable for display to the user.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.DisplayTitle">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the title that is suitable for display to the user.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.DownloadStatus">
+            <summary>
+            The metadata for a int typed value to retrieve the information about the download status of the media which will be used for later offline playback.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Duration">
+            <summary>
+            The metadata for a int typed value to retrieve the information about the duration of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Extras">
+            <summary>
+            A Bundle extra.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Genre">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the genre of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.MediaUri">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the Uri of the content.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.NumTracks">
+            <summary>
+            The metadata for a int typed value to retrieve the information about the number of tracks in the media's original source.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Rating">
+            <summary>
+            The metadata for a Rating2 typed value to retrieve the information about the overall rating for the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Title">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the title of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.TrackNumber">
+            <summary>
+            The metadata for a int typed value to retrieve the information about the track number for the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.UserRating">
+            <summary>
+            The metadata for a Rating2 typed value to retrieve the information about the user's rating for the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Writer">
+            <summary>
+            The metadata for a CharSequence or string typed value to retrieve the information about the writer of the media.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.Year">
+            <summary>
+            The metadata for a int typed value to retrieve the information about the year the media was created or published.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.FileExtension">
+            <summary>
+            The file extension of the media item
+            This may not be available for every item
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.FileName">
+            <summary>
+            The name of the media file
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.MediaType">
+            <summary>
+            The type of the media item
+            Standard Type is Default which will try to play in the standard way.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Library.IMediaItem.MediaLocation">
+            <summary>
+            The location of the media item
+            Standard location is Default which will make a guess based on the URI.
+            </summary>
+        </member>
+        <member name="F:MediaManager.Library.MediaLocation.Unknown">
+            <summary>
+            Used when MediaLoction type is not known
+            </summary>
+        </member>
+        <member name="F:MediaManager.Library.MediaLocation.Remote">
+            <summary>
+            Used for Media that is available online, like http, https, udp, etc
+            </summary>
+        </member>
+        <member name="F:MediaManager.Library.MediaLocation.FileSystem">
+            <summary>
+            Used for local File media. Typically used together with File and Directory api's
+            </summary>
+        </member>
+        <member name="F:MediaManager.Library.MediaLocation.Embedded">
+            <summary>
+            Used for Media that is embedded into an Assembly. Build action of file needs to be set Embedded Resource
+            </summary>
+        </member>
+        <member name="F:MediaManager.Library.MediaLocation.Resource">
+            <summary>
+            Used for media that is added to the native system. For example Assets and raw folder on Android, and Resources folder on iOS
+            </summary>
+        </member>
+        <member name="M:MediaManager.MediaManagerExtensions.Play(MediaManager.IMediaManager,System.Object)">
+            <summary>
+            Tries to Play the mediaSource by checking the type. Returns null when unable to find a playable type
+            </summary>
+            <param name="mediaManager"></param>
+            <param name="mediaSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.MediaManagerExtensions.ToggleRepeat(MediaManager.IMediaManager)">
+            <summary>
+            Enables or disables repeat mode
+            </summary>
+        </member>
+        <member name="M:MediaManager.MediaManagerExtensions.ToggleShuffle(MediaManager.IMediaManager)">
+            <summary>
+            Enables or disables shuffling
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.StepSize">
+            <summary>
+            Managing the step size for the step forward and step backward functions
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.State">
+            <summary>
+            Reading the current status of the player
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.Position">
+            <summary>
+            Gets the players position
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.Duration">
+            <summary>
+            Gets the source duration
+            If the response is TimeSpan.Zero, the duration is unknown or the player is still buffering.
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.Buffered">
+            <summary>
+            Gets the buffered time
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.Speed">
+            <summary>
+            The playback speed. Can be used to make the media play slower or faster
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.ClearQueueOnPlay">
+            <summary>
+            Indicates if the Queue should be cleared when calling Play(object);
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.AutoPlay">
+            <summary>
+            Indicates if the Player should start playing after calling Play(object);
+            Otherwise you need to call Play(); manually
+            </summary>
+        </member>
+        <member name="P:MediaManager.Playback.IPlaybackManager.KeepScreenOn">
+            <summary>
+            Will keep the screen on when set to true and a VideoView is on the screen and playing
+            </summary>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.Play">
+            <summary>
+            Plays the current MediaItem
+            </summary>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.Pause">
+            <summary>
+            Pauses the current MediaItem
+            </summary>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.Stop">
+            <summary>
+            Stops playing
+            </summary>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.PlayPrevious">
+            <summary>
+            Plays the previous MediaItem
+            </summary>
+            <returns>Playing previous MediaItem was possible</returns>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.PlayNext">
+            <summary>
+            Plays the next MediaItem
+            </summary>
+            <returns>Playing next MediaItem was possible</returns>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.PlayQueueItem(MediaManager.Library.IMediaItem)">
+            <summary>
+            Will try to play a specific item from the Queue
+            </summary>
+            <param name="mediaItem"></param>
+            <returns>false when the item doesn't exist in the Queue</returns>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.PlayQueueItem(System.Int32)">
+            <summary>
+            Will try to play a specific item from the Queue
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.StepForward">
+            <summary>
+            Seeks forward a fixed amount of seconds of the current MediaItem
+            </summary>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.StepBackward">
+            <summary>
+            Seeks backward a fixed amount of seconds of the current MediaItem
+            </summary>
+        </member>
+        <member name="M:MediaManager.Playback.IPlaybackManager.SeekTo(System.TimeSpan)">
+            <summary>
+            Seeks to the specified amount of seconds
+            </summary>
+            <param name="position"></param>
+        </member>
+        <member name="M:MediaManager.Player.IMediaPlayer.Play(MediaManager.Library.IMediaItem)">
+            <summary>
+            Starts playing the MediaItem
+            </summary>
+        </member>
+        <member name="M:MediaManager.Player.IMediaPlayer.Play(MediaManager.Library.IMediaItem,System.TimeSpan,System.Nullable{System.TimeSpan})">
+            <summary>
+            Starts playing the MediaItem at a given time and stops at a specific time.
+            Use TimeSpan.Zero for startAt to start at beginning of the MediaItem
+            </summary>
+        </member>
+        <member name="M:MediaManager.Player.IMediaPlayer.Play">
+            <summary>
+            Starts playing
+            </summary>
+        </member>
+        <member name="M:MediaManager.Player.IMediaPlayer.Pause">
+            <summary>
+            Stops playing but retains position
+            </summary>
+        </member>
+        <member name="M:MediaManager.Player.IMediaPlayer.Stop">
+            <summary>
+            Stops playing
+            </summary>
+        </member>
+        <member name="M:MediaManager.Player.IMediaPlayer.SeekTo(System.TimeSpan)">
+            <summary>
+            Changes position to the specified number of milliseconds from zero
+            </summary>
+        </member>
+        <member name="E:MediaManager.Player.IMediaPlayer.BeforePlaying">
+            <summary>
+            Setting or getting whether we are in the repeat state
+            </summary>
+        </member>
+        <member name="E:MediaManager.Queue.IMediaQueue.QueueEnded">
+            <summary>
+            Raised when the end of the Queue has been reached
+            </summary>
+        </member>
+        <member name="P:MediaManager.Queue.IMediaQueue.HasNext">
+            <summary>
+            If the Queue has a next track
+            </summary>
+        </member>
+        <member name="P:MediaManager.Queue.IMediaQueue.Next">
+            <summary>
+            Get the next item from the queue
+            </summary>
+        </member>
+        <member name="P:MediaManager.Queue.IMediaQueue.HasPrevious">
+            <summary>
+            If the Queue has a previous track
+            </summary>
+        </member>
+        <member name="P:MediaManager.Queue.IMediaQueue.Previous">
+            <summary>
+            Get the previous item from the queue
+            </summary>
+        </member>
+        <member name="P:MediaManager.Queue.IMediaQueue.HasCurrent">
+            <summary>
+            If the Queue has a track it can currently play
+            </summary>
+        </member>
+        <member name="P:MediaManager.Queue.IMediaQueue.CurrentIndex">
+            <summary>
+            Get the current playing index the Queue
+            </summary>
+        </member>
+        <member name="P:MediaManager.Queue.IMediaQueue.Current">
+            <summary>
+            Get the current track from the Queue
+            </summary>
+        </member>
+        <member name="E:MediaManager.Volume.IVolumeManager.VolumeChanged">
+            <summary>
+            Raised when the volume changes
+            </summary>
+        </member>
+        <member name="P:MediaManager.Volume.IVolumeManager.CurrentVolume">
+            <summary>
+            The volume for the current MediaPlayer 
+            Valid values are 0 - MaxVolume
+            </summary>
+        </member>
+        <member name="P:MediaManager.Volume.IVolumeManager.MaxVolume">
+            <summary>
+            The Maximum volume that can be used
+            </summary>
+        </member>
+        <member name="P:MediaManager.Volume.IVolumeManager.Balance">
+            <summary>
+            -1.0f (Left), 0.0f (Center), 1.0f (right)
+            </summary>
+        </member>
+        <member name="P:MediaManager.Volume.IVolumeManager.Muted">
+            <summary>
+            True if the sound is Muted
+            </summary>
+        </member>
+        <member name="F:MediaManager.MediaManagerImplementation.NativeMethods.EXECUTION_STATE.CONTINUOUS">
+            <summary>
+            Informs the system that the state being set should remain in effect until the next call that uses ES_CONTINUOUS and one of the other state flags is cleared.
+            </summary>
+        </member>
+        <member name="F:MediaManager.MediaManagerImplementation.NativeMethods.EXECUTION_STATE.DISPLAY_REQUIRED">
+            <summary>
+            Forces the display to be on by resetting the display idle timer.
+            </summary>
+        </member>
+    </members>
+</doc>

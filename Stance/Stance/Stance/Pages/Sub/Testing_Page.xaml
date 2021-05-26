@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.Testing_Page">
+
+  <StackLayout Margin="0,30,0,0" >
+
+  <StackLayout Orientation="Horizontal" Padding="0,35,0,0" HorizontalOptions="CenterAndExpand" Spacing="0">
+
+    <StackLayout HorizontalOptions="Start" WidthRequest="120">
+      <Button  Text="View Image" Clicked="ViewImageBtn_Clicked" Margin="0,30,0,0" HorizontalOptions="Center"  BackgroundColor="#48B8D0" FontSize="Small" TextColor="White" BorderColor="#f1f1f1" BorderWidth="1" BorderRadius="40" HeightRequest="80" WidthRequest="80" />
+    </StackLayout>
+
+    <StackLayout HorizontalOptions="Center" WidthRequest="120">
+      <Button Text="Play Video" Clicked="WatchVideoBtn_Clicked" Margin="0,30,0,0" HorizontalOptions="Center"  BackgroundColor="#c8e77e"  FontSize="Small" TextColor="Black" BorderColor="#f1f1f1" BorderWidth="1" BorderRadius="40" HeightRequest="80" WidthRequest="80" />
+    </StackLayout>
+
+    <StackLayout HorizontalOptions="End" WidthRequest="120">
+      <Button x:Name="btnAudio"  Text="Hear Audio" Clicked="HearAudioBtn_Clicked" Margin="0,30,0,0" HorizontalOptions="Center"   BackgroundColor="#6a26b2"  FontSize="Small" TextColor="White" BorderColor="#f1f1f1" BorderWidth="1" BorderRadius="40" HeightRequest="80" WidthRequest="80" />
+    </StackLayout>
+
+  </StackLayout>
+
+    <StackLayout Orientation="Horizontal" Padding="0,35,0,0" HorizontalOptions="CenterAndExpand" Spacing="0">
+
+      <!--<StackLayout HorizontalOptions="Start" WidthRequest="120">
+        <Button  Text="View Image" Clicked="ViewImageBtn_Clicked" Margin="0,30,0,0" HorizontalOptions="Center"  BackgroundColor="#48B8D0" FontSize="Small" TextColor="White" BorderColor="#f1f1f1" BorderWidth="1" BorderRadius="40" HeightRequest="80" WidthRequest="80" />
+      </StackLayout>-->
+
+      <StackLayout HorizontalOptions="Center" WidthRequest="120">
+        <Button Text="Download" Clicked="DownloadBtn_Clicked" Margin="0,30,0,0" HorizontalOptions="Center"  BackgroundColor="#c8e77e"  FontSize="Small" TextColor="Black" BorderColor="#f1f1f1" BorderWidth="1" BorderRadius="40" HeightRequest="80" WidthRequest="80" />
+      </StackLayout>
+
+      <!--<StackLayout HorizontalOptions="End" WidthRequest="120">
+        <Button x:Name="btnAudio"  Text="Hear Audio" Clicked="HearAudioBtn_Clicked" Margin="0,30,0,0" HorizontalOptions="Center"   BackgroundColor="#6a26b2"  FontSize="Small" TextColor="White" BorderColor="#f1f1f1" BorderWidth="1" BorderRadius="40" HeightRequest="80" WidthRequest="80" />
+      </StackLayout>-->
+
+    </StackLayout>
+
+    <StackLayout>
+      <Entry x:Name="ImageUrl" Placeholder="Enter Image Url" />
+      <Entry x:Name="VideoUrl" Placeholder="Enter Video Url" />
+      <Entry x:Name="AudioUrl" Placeholder="Enter Audio Url" />
+    </StackLayout>
+
+  </StackLayout>
+
+</ContentPage>

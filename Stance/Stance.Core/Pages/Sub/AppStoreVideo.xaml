@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" 
+             x:Class="Stance.Pages.Sub.AppStoreVideo">
+
+
+    <AbsoluteLayout BackgroundColor="#17191A" x:Name="MainContainer">
+        <o:VideoPlayer x:Name="VideoPlayID" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" AutoPlay="True" DisplayControls="False" BackgroundColor="#17191A" FillMode="ResizeAspectFill" Repeat="False" Volume="70" />
+
+        <StackLayout AbsoluteLayout.LayoutBounds="1,0,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" >
+            <StackLayout Padding="0,20,10,0" >
+                <Button Image="Delete-32.png" TextColor="White" FontSize="20" FontAttributes="Bold" Clicked="ExitBtn_Clicked" HeightRequest="70" WidthRequest="70" />
+            </StackLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+    
+
+
+</ContentPage>

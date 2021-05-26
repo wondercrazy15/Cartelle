@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"                            
+             x:Class="Stance.Pages.Main.Progress_MainPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="DASHBOARD">
+
+
+    <StackLayout Spacing="0" BackgroundColor="#007077" >
+
+        <StackLayout x:Name="NonAuthSL" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="40,0,40,0">
+            <Label Text="GET STARTED" FontSize="26" TextColor="White" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="To get started, start a program to get access to your program's dashboard." TextColor="White" FontSize="18" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Medium" HorizontalTextAlignment="Center"/>
+            <Button x:Name="AuthBtn" Text="   JOIN or SIGN IN   " FontSize="22" BorderColor="White" BorderWidth="1" TextColor="White"  FontFamily="AvenirNextCondensed-Bold" />
+        </StackLayout>
+
+        <StackLayout x:Name="DoesNotHaveActiveProgram" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="40,0,40,0">
+            <Label Text="SETUP YOUR PROGRAM" FontSize="26" TextColor="White" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="Start a program to see your dashboard. Click 'Setup Program' on your program or go to 'My Plans' and select a program to 'Activate' or 'Repeat'." TextColor="White" FontSize="22" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Medium" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <StackLayout x:Name="JustCompletedProgram" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="40,0,40,0">
+            <Label Text="CONGRATULATIONS" FontSize="26" TextColor="White" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="You have completed your program. To setup a new program, go to 'My Plans' and select a program to 'Activate' or 'Repeat'." TextColor="White" FontSize="22" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Medium" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <StackLayout x:Name="GettingSetupSL" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="50,20,50,0">
+            <ActivityIndicator x:Name="SpinnerProgramDay2" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+            <!--<Label Text="GETTING SETUP" FontSize="26" TextColor="White" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Bold" HorizontalTextAlignment="Center"/>-->
+            <Label Text="We are setting up your dashboard, give us a moment. If this is taking too long, please hit Reload." TextColor="White" FontSize="22" FontAttributes="Bold" FontFamily="AvenirNextCondensed-Medium" HorizontalTextAlignment="Center"/>
+            <Button x:Name="ReloadBtn" Text="   RELOAD   " FontSize="22" BorderColor="White" BorderWidth="1" TextColor="White" Clicked="ReloadBtn_Clicked" FontFamily="AvenirNextCondensed-Bold" />
+        </StackLayout>
+
+        <StackLayout x:Name="Dashboard" Spacing="0" BackgroundColor="#007077">
+
+            <StackLayout x:Name="NotLoadedYetProgramDay" Spacing="25" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="25,25,25,25" BackgroundColor="#007077" >
+                <ActivityIndicator x:Name="SpinnerProgramDay" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+            </StackLayout>
+
+            <StackLayout HeightRequest="40" BackgroundColor="#00bac6" Spacing="0">
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                    <Label x:Name="programName" FontSize="22" TextColor="White" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Spacing="0" BackgroundColor="Black" >
+                <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="13" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Spacing="0" BackgroundColor="#007077">
+
+                <ScrollView x:Name="ProgramScrollView">
+                    <StackLayout Spacing="0" >
+
+                        <StackLayout x:Name="ProgramImage" Spacing="0" >
+                            <RelativeLayout BackgroundColor="#909090">
+
+                                <ffimageloading:CachedImage x:Name="programImage" Aspect="AspectFill"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+                                
+                                <!--<Image x:Name="programImage" Aspect="AspectFill"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />-->
+
+                                <ActivityIndicator x:Name="SpinnerProgram"
+                                 HorizontalOptions="FillAndExpand" Color="White"
+                                 IsRunning="{Binding Source={x:Reference programImage}, Path=IsLoading}"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="2,2,2,2" Spacing="2"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="2">
+
+                                        <StackLayout HorizontalOptions="Start" WidthRequest="140" Padding="0,5,0,5" Spacing="0" BackgroundColor="#007077" Opacity="0.6" >
+                                            <Label x:Name="numberOfWeeks" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                                            <Label Text="Weeks" TextColor="White" FontSize="11" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="Center" WidthRequest="140" Padding="0,5,0,5" Spacing="0" BackgroundColor="#007077" Opacity="0.6">
+                                            <Label x:Name="programGoal" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                                            <Label Text="Goal" TextColor="White" FontSize="11" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="End" WidthRequest="140" Padding="0,5,0,5" Spacing="0" BackgroundColor="#007077" Opacity="0.6">
+                                            <Label x:Name="programLevel" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                                            <Label Text="Level" TextColor="White" FontSize="11" HorizontalTextAlignment="Center"  FontFamily="HelveticalNeue-Bold" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <StackLayout x:Name="ProgressBox" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+
+                                        <StackLayout HorizontalOptions="Start" VerticalOptions="EndAndExpand" WidthRequest="100" Spacing="0">
+                                            <Button x:Name="DaysExercised" FontSize="17"  TextColor="White" Margin="0,0,0,15" FontFamily="HelveticalNeue-Bold" HorizontalOptions="Center" HeightRequest="40" WidthRequest="40" BackgroundColor="#000000" BorderRadius="20" Opacity="0.6"/>
+                                            <Label Text="DAYS EXERCISED" TextColor="White" FontSize="10" HorizontalOptions="Center" FontFamily="PingFangTC-Regular" />
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0" >
+                                            <Button x:Name="PercentageDaysPast" FontSize="19" TextColor="White"  Margin="0,0,0,15" FontFamily="HelveticalNeue-Bold" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" BackgroundColor="#000000" BorderRadius="40" Opacity="0.6"/>
+                                            <Label x:Name="ProgramStartText" Text="% COMPLETE" TextColor="White" FontSize="10" HorizontalOptions="Center" FontFamily="PingFangTC-Regular" />
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="End" VerticalOptions="EndAndExpand" WidthRequest="100" Spacing="0" >
+                                            <Button x:Name="DaysMissed" FontSize="17" TextColor="White" Margin="0,0,0,15" FontFamily="HelveticalNeue-Bold" HorizontalOptions="Center" HeightRequest="40" WidthRequest="40" BackgroundColor="#000000" BorderRadius="20" Opacity="0.6"/>
+                                            <Label Text="DAYS MISSED" TextColor="White" FontSize="10" HorizontalOptions="Center" FontFamily="PingFangTC-Regular" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0" Margin="0,15,0,0">
+                                        <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                                            <Button x:Name="ScheduleTracking" FontSize="15" TextColor="White" HeightRequest="35" WidthRequest="110" FontFamily="HelveticalNeue-Bold" Margin="0,0,0,15" HorizontalOptions="Center" BackgroundColor="#007077" Opacity="0.8" BorderRadius="3" />
+                                            <Label x:Name="ProgramStartText2" Text="You Are on Day" TextColor="White" FontSize="10" HorizontalOptions="Center" FontFamily="PingFangTC-Regular" IsVisible="False" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </RelativeLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+
+</d:BaseContentPage>

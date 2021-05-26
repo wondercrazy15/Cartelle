@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"                         
+             x:Class="Stance.Pages.Sub.AthleteOverview_v1"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="ATHLETE">
+
+  <StackLayout Spacing="0" BackgroundColor="#007077">
+    <StackLayout HeightRequest="40" BackgroundColor="#00bac6" Spacing="0">
+      <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <Label x:Name="athleteName" FontSize="22" TextColor="White" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Spacing="0" BackgroundColor="Black" >
+      <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="13" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+    <StackLayout Spacing="0" BackgroundColor="#007077">
+
+      <ScrollView>
+        <StackLayout Spacing="0" >
+
+          <StackLayout x:Name="AthleteRow" Spacing="0" >
+            <RelativeLayout BackgroundColor="#909090">
+
+                            <ffimageloading:CachedImage x:Name="programImage" Aspect="AspectFill"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+                
+                            <!--<Image x:Name="programImage" Aspect="AspectFill"
+             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />-->
+
+              <ActivityIndicator x:Name="Spinner"
+                                 HorizontalOptions="FillAndExpand" Color="White"
+                                 IsRunning="{Binding Source={x:Reference programImage}, Path=IsLoading}"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+              <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="35,160,35,20" Spacing="0"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="End" Spacing="0">
+                  <Label Text="MEET YOUR TRAINER" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="PingFangTC-Regular" Margin="0,0,0,15" IsVisible="False" />
+                  <Button x:Name="WatchVideoBtn" Text="MEET YOUR TRAINER" Clicked="WatchVideoBtn_Clicked" Margin="0,0,0,15" HeightRequest="30" WidthRequest="160" FontSize="11" BorderColor="White" BorderRadius="4" BorderWidth="1" TextColor="White"  FontFamily="PingFangTC-Regular" />
+                </StackLayout>
+
+                <StackLayout Spacing="0" Padding="0,0,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                  <Label x:Name="SubHeading" TextColor="White"  FontFamily="PingFangTC-Regular" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+
+              </StackLayout>
+            </RelativeLayout>
+          </StackLayout>
+
+          <StackLayout HeightRequest="45" BackgroundColor="Black" Spacing="0">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+              <Label Text="PROGRAMS" TextColor="White" FontSize="20" FontFamily="AvenirNextCondensed-Medium"  />
+            </StackLayout>
+          </StackLayout>
+
+          <StackLayout x:Name="NotLoadedYet" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="50,50,50,50" BackgroundColor="#007077" >
+            <ActivityIndicator x:Name="Spinner2" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+          </StackLayout>
+
+          <StackLayout x:Name="listOfPrograms" Spacing="0" />
+
+        </StackLayout>
+      </ScrollView>
+    </StackLayout>
+  </StackLayout>
+
+
+</d:BaseContentPage>

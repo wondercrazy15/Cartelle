@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AppCenter.Push</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AppCenter.Push.Push">
+            <summary>
+            Push feature.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AppCenter.Push.Push.BindingType">
+            <summary>
+            Internal SDK property not intended for public use.
+            </summary>
+            <value>
+            The Android SDK Push bindings type.
+            </value>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.SetSenderId(System.String)">
+            <summary>
+            Sets the Sender ID necessary to receive push notifications.
+            </summary>
+            <value>
+            The Sender ID to set.
+            </value>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.EnableFirebaseAnalytics">
+            <summary>
+            Call this before starting Push if you are using Firebase and want to use Firebase Analytics as well. If
+            App Center detects Firebase, the default behavior is to disable it.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.CheckLaunchedFromNotification(Android.App.Activity,Android.Content.Intent)">
+            <summary>
+            If you are using the event for background push notifications
+            and your activity has a launch mode such as singleTop, singleInstance or singleTask,
+            need to call this method in your launcher OnNewIntent override method.
+            </summary>
+            <param name="activity">This activity.</param>
+            <param name="intent">Intent from OnNewIntent().</param>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.IsEnabledAsync">
+            <summary>
+            Check whether the Push service is enabled or not.
+            </summary>
+            <returns>A task with result being true if enabled, false if disabled.</returns>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.SetEnabledAsync(System.Boolean)">
+            <summary>
+            Enable or disable the Push service.
+            </summary>
+            <returns>A task to monitor the operation.</returns>
+        </member>
+        <member name="E:Microsoft.AppCenter.Push.Push.PushNotificationReceived">
+            <summary>
+            Occurs when the application receives a push notification.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs">
+            <summary>
+            Event args for event that occurs when a push notification is received.
+            </summary>
+            <seealso cref="E:Microsoft.AppCenter.Push.Push.PushNotificationReceived"/>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.CustomData">
+            <summary>
+            Custom data attached to the push message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.Title">
+            <summary>
+            Title of the push message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.Message">
+            <summary>
+            Body of the push message
+            </summary>
+        </member>
+    </members>
+</doc>

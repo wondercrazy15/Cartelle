@@ -1,0 +1,223 @@
+
+https://gaigatech.visualstudio.com/Stance/
+Dominic@thecartelle.com
+Cartelle90068
+
+Appcenter.ms (app analytics) 
+Info@thecartelle.com 
+Cartelle90068
+
+Play store
+thecartellevlog@gmail.com
+Humble!2018
+
+
+
+Key-store
+Pass=Cartelle
+
+1. WebAPI(Postman collection or document) and credentials
+2. Video & Audio(URL come from API)
+3. Programs(List come from API)
+4. Test Flight mode
+5. Running Mode steps(Code is running in iOS, Working on to run in android)
+
+=>They not follow MVVM structure
+=>They call API in main Tab page and store data in local storage. Display from that 
+=>They pass data using messaging center
+=>Manage native coding by developer so We have to find same dependency and packages for that
+
+Need this information from client
+1)WebAPI(Postman collection or document) and credentials
+2)Test Flight (Certificates) and p12
+
+work/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets(2613,3): error : java.lang.IllegalArgumentException: already added :  Lcom/google/android/gms/actions/ItemListIntents;
+
+ error : java.lang.IllegalArgumentException: already added :  Lcom/google/android/gms/actions/ItemListIntents;
+    130 Warning(s)
+
+
+
+I have resolve linking error and run app in android.
+App is crash in many places so working on that.
+
+
+
+=>Android app is in the running mode this is a video of the app
+https://drive.google.com/file/d/1OI2jN2LUa_BEEv8UlgwLCt1srMydVWTU/view?usp=sharing
+-There are 25-30 screens in the application
+-The image name is not in proper formate for android so I have to change the name in both
+-There is some issue with plugs that is not compatible with android or issue with android (Like video plugin not working with android) so I have to change in both the side 
+-Need a logo for the application
+
+=>I have try many plugin but static video is not playing when I have put url and run that is working
+=Working on that what is issue with static video
+=Done Estimation of the project
+=Try to Resolve other screen design issues also
+(https://prnt.sc/t5nw31)
+
+
+Number speech 
+
+Music
+
+=>For the clone from Azure and save changes
+-Need clone link so we can get code from their(https://prnt.sc/t8hl3a)
+-You have to provide some permission so we show that button(https://prnt.sc/t8hiwu)
+=>Debug is not working on Android side
+=>Need API information because getting error in that(https://prnt.sc/t899w5) without that further screen not open
+
+git clone https://gaigatech@dev.azure.com/Stance/Repos/_git/Projects
+
+
+
+
+
+
+
+
+
+
+=>Need Api Information
+-https://cartelleapi.azurewebsites.net
+-https://cartelleapi-staging.azurewebsites.net
+-https://cartelleapi-dev.azurewebsites.net
+=>Paid plugins Credential information
+-https://dashboard.branch.io/ User id and password
+=>For the clone from Azure and save changes
+-Need clone link so we can get code from their(https://prnt.sc/t8hl3a)
+-You have to provide some permission so we show that button(https://prnt.sc/t8hiwu)
+APK Link=https://drive.google.com/file/d/1ZLTUIfpzHNOsWgXd_MqR-qTnbJsDj8dN/view?usp=sharing
+
+
+
+Info@thecartelle.com
+OilCity!2019
+
+
+
+
+
+https://cartelleapi.azurewebsites.net/api/v10/signupprocess/signupform/
+
+https://cartelleapi.azurewebsites.net/api/v10/signupprocess/signupform/
+
+
+
+
+Basic M1I2ZGhDUzg4OFk5OmNlMmR0aER5ekpXVg==
+
+
+Color.Transparent
+
+BackgroundColor = Color.Transparent;
+
+
+https://stackoverflow.com/questions/42088533/xamarin-video-player-component-stretch-videos-on-android
+
+=>Isuue  video
+https://drive.google.com/file/d/1o_DShj4anzbwB9g-J_PfebxP0Js3DlcY/view?usp=sharing
+
+
+=>Resolved top margin and video height issue
+=>After in setup playstore account we can process for in app purchase
+=>Need apple account information for In-App purchase in android
+APk=https://drive.google.com/file/d/19mzdlqbSZXmE1MD-Jdf12hfVFGfCQVFk/view?usp=sharing
+
+
+
+https://prnt.sc/tl3l55
+
+
+Working on add to app in Play store 
+Client have to setup merchant account means their Bank account information for in App purchase product
+https://play.google.com/apps/publish/?account=5962043923448862272#PaymentsPortalPlace
+
+
+=>They have to add physical address in account details.
+https://play.google.com/apps/publish/?account=5962043923448862272#AppDashboardPlace:p=bethestance.Stance&appid=4973434129531153814
+=>Client has not verify bank info so please tell him verify that
+https://play.google.com/apps/publish/?account=5962043923448862272#PaymentsPortalPlace
+
+=>I have Done android specific code so that effect in iOS design so need to commit this code in new branch
+=>For the changes in iOS code and Upload new app in App Store
+=>I need p12 certificate and Apple store credential for that
+
+
+-I have add In-app purchase product in play-store and Add Information of App(Screenshot, Logo, Information)
+-Done code for In-app-purchase and Upload new APk
+-https://prnt.sc/tly3ej
+
+
+
+
+
+I have no live task, so what can I do
+I have one idea to create a one file in that we set  small and large device 
+
+productId Monthly
+
+
+Get Fit & Tone Up Monthly
+
+15.50
+
+=>Working on Notification in DPRS
+-API calling and Design notification screen
+https://prnt.sc/tn9xjz
+https://prnt.sc/tn9y19
+https://prnt.sc/tn9ymd
+https://prnt.sc/tn9z0m
+
+
+
+
+In-9:00
+Break1-[12:00 to 12:30(30 min)]
+Out-2:00
+Work description:Working on how to create this type of layout in xamarin forms
+https://prnt.sc/to9uzj
+
+
+In-9:30
+Break1-[12:30 to 1:00(30 min)]
+Out-7:00
+Description:
+-I have open App when user click on instagram
+https://prnt.sc/tpv8zz
+-Working on swipe to delete demo
+https://drive.google.com/file/d/12eRv_PROOxf3vJUM2kNbnF1NWdbvjobj/view?usp=sharing
+
+
+=>Today I have resolve bug of workout screen
+=>Added new APK for Internal tester
+https://prnt.sc/tvoqfy
+
+
+[View] LottieAnimationView not displayed because it is too large to fit into a software layer (or drawing cache), needs 5443200 bytes, only 3686400 available
+
+
+
+=>Resolve issue of Local storage with SQLite in tamarin forms
+=>App is working fine in both android and iOS
+https://drive.google.com/file/d/1BdvdStpV6WG6Ghn87A8unrbVmddwi2Pv/view?usp=sharing
+=>Working on how create custom button with Gradient colour
+
+
+This is the Steps You have to follow for Add Tester
+=>First You have to open this Link
+https://play.google.com/console/developers/5962043923448862272/app/4973434129531153814/tracks/internal-testing
+=>After that Click on Testers
+https://prnt.sc/tyrvl5
+=>In that Manage testers You have to add the email of Tester
+https://prnt.sc/tyrvl5
+=>The copy How testers join your test URL Link
+https://prnt.sc/tyrwhk
+=>Give that Link to Tester(Added email Address)
+=>Open that link in the browser
+=>After that Tester See JOIN THE PROGRAM button, Click on that
+https://prnt.sc/trl2jk
+=>After that User Have to Access to Install the Application from the link: Install the public version on Google Play
+https://prnt.sc/trl34a
+https://prnt.sc/trl40v
+ https://play.google.com/store/apps/details?id=bethestance.Stance

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"
+             x:Class="Stance.Pages.Sub.EditPersonalProfile">
+
+    <StackLayout Spacing="0">
+
+        <StackLayout HeightRequest="40" BackgroundColor="#007077" HorizontalOptions="FillAndExpand" Spacing="0" Orientation="Horizontal" Padding="10,15,10,0">
+            <!--<StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Spacing="0">
+          <Button Text="Edit" HorizontalOptions="End" Clicked="EditBtn_Clicked" TextColor="White" FontSize="20"   />
+        </StackLayout>-->
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="0">
+                <Label Text="EDIT PROFILE" FontSize="24" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="25,0,0,0" />
+            </StackLayout>
+            <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="End" Spacing="0">
+                <Button Image="Delete-32.png" HorizontalOptions="End" Clicked="ExitBtn_Clicked" TextColor="Black" FontSize="20"   />
+            </StackLayout>
+        </StackLayout>
+
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Edit Profile Information">
+
+                    <TextCell x:Name="Email" Text="Email" />
+                    <TextCell x:Name="FirstName" Text="First Name" />
+                    <TextCell x:Name="LastName" Text="Last Name" />
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0" >
+                            <Label Text="Instagram Handle" VerticalOptions="Center" />
+                            <Entry x:Name="InstagramHandle" Keyboard="Text" WidthRequest="120" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+
+                    <!--<EntryCell x:Name="FirstName" Keyboard="Text" Label="First Name" Placeholder="Enter your First Name" />
+        <EntryCell x:Name="LastName" Keyboard="Text" Label="Last Name" Placeholder="Enter your Last Name" />-->
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0" >
+                            <Label Text="Birthday" VerticalOptions="Center" />
+                            <DatePicker x:Name="Birthdate" Date="1 Jan 1990" Format="d MMM yyyy" MinimumDate="1 Jan 1910" MaximumDate="1 Jan 2017" HorizontalOptions="EndAndExpand"  />
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0" >
+                            <Label Text="Gender" VerticalOptions="Center" />
+                            <Picker x:Name="Gender" Title="Enter your Gender" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <!--<ViewCell>
+          <StackLayout Orientation="Horizontal" Padding="13,0" >
+            <Label Text="Time Zone" VerticalOptions="Center" />
+            <Picker x:Name="TimeZone" Title="Enter your Time Zone"  HorizontalOptions="EndAndExpand"/>
+          </StackLayout>
+        </ViewCell>-->
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0" >
+                            <Label Text="Height" VerticalOptions="Center" />
+                            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                <Label x:Name="Height" Text="{Binding Source={x:Reference heightStepper}, Path=Value, StringFormat='{0:N0}'}" VerticalOptions="Center"/>
+                                <Label Text="cm" VerticalOptions="Center"/>
+                            </StackLayout>
+                            <Stepper x:Name="heightStepper" Increment="1" Minimum="50" Maximum="250" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0" >
+                            <Label Text="Weight" VerticalOptions="Center" />
+                            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                <Label x:Name="Weight" Text="{Binding Source={x:Reference weightStepper}, Path=Value, StringFormat='{0:N0}'}" VerticalOptions="Center"/>
+                                <Label Text="lbs" VerticalOptions="Center"/>
+                            </StackLayout>
+                            <Stepper x:Name="weightStepper" Increment="1" Minimum="50" Maximum="450" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0" >
+                            <Label Text="Training Goal" VerticalOptions="Center" />
+                            <Picker x:Name="TrainingGoal" Title="Enter your Goal" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0" >
+                            <Label Text="Region" VerticalOptions="Center" />
+                            <Picker x:Name="Region" Title="Enter your Region" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout x:Name="SaveSL" Orientation="Horizontal" Padding="13,0" BackgroundColor="#007077" Spacing="15" >
+                            <Button x:Name="SaveText" Text="SAVE" Clicked="SaveProfile_Btn" TextColor="White" FontSize="22" FontFamily="AvenirNextCondensed-Bold" HorizontalOptions="CenterAndExpand"/>
+                            <ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</d:BaseContentPage>

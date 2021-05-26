@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:ExtendedTabbedPage  xmlns:controls="clr-namespace:Stance.Models" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Stance"
+             BarTextColor="LightGray"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.IsSmoothScrollEnabled="false"
+             android:TabbedPage.IsSwipePagingEnabled="true"
+             x:Class="Stance.Pages.Main.MainStartingPage">
+ 
+
+</controls:ExtendedTabbedPage>

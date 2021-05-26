@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" 
+             xmlns:d="clr-namespace:Stance.Utils"   
+             xmlns:me="clr-namespace:Stance.MarkupExtensions;assembly=Stance"
+             
+             x:Class="Stance.Pages.Sub.HomePage">
+    
+    <AbsoluteLayout BackgroundColor="#17191A" x:Name="MainContainer">
+        
+         <o:VideoPlayer  x:Name="VideoPlayID"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                         AbsoluteLayout.LayoutFlags="All" 
+                       Source="{me:VideoResource AppStoreVideo.mp4}"
+                       AutoPlay="True"
+	                   DisplayControls="False" FillMode="ResizeAspectFill"
+                        Volume="100"   BackgroundColor="#17191A"/>
+         <!--<StackLayout AbsoluteLayout.LayoutBounds="1,0,150,90" AbsoluteLayout.LayoutFlags="PositionProportional" >
+            <StackLayout Padding="0,15,15,0" HorizontalOptions="End" >
+                <Button x:Name="SoundBtn"  Text="sound" TextColor="#00BBCB" FontSize="16" FontAttributes="Bold" Clicked="SoundsBtn_Clicked" FontFamily="HelveticalNeue-Bold"/>
+            </StackLayout>
+        </StackLayout>-->
+        <StackLayout x:Name="ExitBtn" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" >
+        </StackLayout>
+
+        <!--<StackLayout x:Name="LogoSL" AbsoluteLayout.LayoutBounds="0.5,0,1,100" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" >
+            <Image x:Name="cartelleLogo" Source="cartelle_logo.png" WidthRequest="180" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="0,30,0,0"/>
+        </StackLayout>-->
+
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5,1,1,220" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"  Spacing="0" >
+            <StackLayout Spacing="0">
+                <Label Text="#1 IN" Font="AvenirNextCondensed-Bold" FontSize="28" TextColor="White" HorizontalOptions="Center" />
+                <Label Text="WOMEN WORKOUTS" Font="AvenirNextCondensed-Bold" FontSize="28" TextColor="White" HorizontalOptions="Center" />
+
+                <!--<StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="Center">
+                    --><!--<Label Text="™" Font="AvenirNextCondensed-Bold" FontAttributes="Bold" FontSize="10" TextColor="White" HorizontalOptions="Center" />--><!--
+                </StackLayout>-->
+            </StackLayout>
+            <StackLayout x:Name="GoBtnSL" HorizontalOptions="CenterAndExpand" Spacing="0" Margin="0,15,0,10"  >
+                <Button x:Name="GoBtn" Text="GET ACCESS NOW" Clicked="GetStartedBtn_Clicked"  HeightRequest="46"  WidthRequest="200" FontSize="15" BackgroundColor="#00BBCB" BorderRadius="23" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout x:Name="LoginSL" Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand" Margin="5,12,5,0" HeightRequest="20" Padding="5,5,5,5" BackgroundColor="#555757" Opacity="0.8" >
+                <StackLayout Spacing="0" HorizontalOptions="Center"  VerticalOptions="Center">
+                    <Label Text="Have an account? " TextColor="White" FontSize="11" FontFamily="AvenirNextCondensed"  VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Spacing="0" HorizontalOptions="Center" VerticalOptions="Center" >
+                    <Label x:Name="LoginBtn" Text="Log in" FontSize="11" TextColor="White" FontFamily="AvenirNextCondensed" VerticalOptions="Center"/>
+                    <StackLayout HeightRequest="1" BackgroundColor="White" Margin="0,-2,0,0" VerticalOptions="Center" />
+                </StackLayout>           
+            </StackLayout>
+
+
+        </StackLayout>
+    </AbsoluteLayout>    
+</d:BaseContentPage>

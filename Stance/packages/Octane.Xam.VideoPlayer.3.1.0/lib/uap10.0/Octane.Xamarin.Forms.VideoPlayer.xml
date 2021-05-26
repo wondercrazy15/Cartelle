@@ -1,0 +1,1062 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Octane.Xamarin.Forms.VideoPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.BaseClasses.SingletonBase`1">
+            <summary>
+            Singleton Base Class.
+            Allows the use of a single Static Instance on Demand.
+            </summary>
+            <typeparam name="T">The type of object to make a singleton.</typeparam>
+            <typeparam name="TI">The interface of the Type in T. </typeparam>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.BaseClasses.SingletonBase`1._ConcurrencyLock">
+            <summary>
+            Concurrency Locking Object.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.BaseClasses.SingletonBase`1._Current">
+            <summary>
+            Holds the current active singleton object.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.BaseClasses.SingletonBase`1.Current">
+            <summary>
+            Gets or sets the Singleton Current Static Property.
+            </summary>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Constants.FillMode">
+            <summary>
+            Define how the video is displayed within a layer’s bounds.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.FillMode.Resize">
+            <summary>
+            The video stretches to fill the layer’s bounds.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.FillMode.ResizeAspect">
+            <summary>
+            The video’s aspect ratio is preserved and fits the video within the layer’s bounds.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.FillMode.ResizeAspectFill">
+            <summary>
+            The video’s aspect ratio is preserved and fills the layer’s bounds.
+            </summary>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState">
+            <summary>
+            Represents the current state of the video player.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState.Idle">
+            <summary>
+            The idle state is the default state of a newly created video player.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState.Initialized">
+            <summary>
+            The video player enters this state when a video source has been specified for playback.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState.Prepared">
+            <summary>
+            The video player is ready to begin playback.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState.Playing">
+            <summary>
+            Video playback is currently active.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState.Paused">
+            <summary>
+            Video playback is paused.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState.Completed">
+            <summary>
+            Video playback is complete.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState.Error">
+            <summary>
+            The video player has experienced an error.
+            </summary>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.ILogger">
+            <summary>
+            A native platform logging implementation.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.ILogger.Info(System.String)">
+            <summary>
+            Informations the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.ILogger.Warn(System.String)">
+            <summary>
+            Warns the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.ILogger.Error(System.String)">
+            <summary>
+            Errors the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.ILogger.Error(System.Exception)">
+            <summary>
+            Errors the specified exception.
+            </summary>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.ILogger.Error(System.Exception,System.String)">
+            <summary>
+            Errors the specified exception.
+            </summary>
+            <param name="exception">The exception.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.Log">
+            <summary>
+            A cross-platform log implementation.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.Log.Info(System.String)">
+            <summary>
+            Informations the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.Log.Warn(System.String)">
+            <summary>
+            Warns the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.Log.Error(System.String)">
+            <summary>
+            Errors the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.Log.Error(System.Exception)">
+            <summary>
+            Errors the specified exception.
+            </summary>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Diagnostics.Log.Error(System.Exception,System.String)">
+            <summary>
+            Errors the specified exception.
+            </summary>
+            <param name="exception">The exception.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs">
+            <summary>
+            Contains error information about the video player.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs.Message">
+            <summary>
+            The reason the error occurred.
+            </summary>
+            <value>
+            The label.
+            </value>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs.ErrorObject">
+            <summary>
+            The native exception object.
+            </summary>
+            <value>
+            The error.
+            </value>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="errorObject">The exception.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs.#ctor(System.TimeSpan,System.TimeSpan,System.Single,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs" /> class.
+            </summary>
+            <param name="currentTime">The current time.</param>
+            <param name="duration">The duration.</param>
+            <param name="rate">The rate of playback.</param>
+            <param name="message">The message.</param>
+            <param name="errorObject">The error object.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs.#ctor(Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs" /> class.
+            </summary>
+            <param name="videoPlayerEventArgs">The <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs" /> instance containing the event data.</param>
+            <param name="message">The message.</param>
+            <param name="errorObject">The error object.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs">
+            <summary>
+            Represents video player event data.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs.CurrentTime">
+            <summary>
+            The current position in the playback timeline.
+            </summary>
+            <value>
+            The player's current position.
+            </value>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs.Duration">
+            <summary>
+            Length of the video file.
+            </summary>
+            <value>
+            The duration.
+            </value>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs.Rate">
+            <summary>
+            The current rate of playback. Examples:
+            </summary>
+            <remarks>
+            <para>
+            Some media files can support reverse-playback via negative rates.
+            0.0 = Stopped
+            0.5 = Playing at half speed (slow motion).
+            1.0 = Normal playback.
+            1.0+ = Fast playback.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs" /> class.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs.#ctor(System.TimeSpan,System.TimeSpan,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs" /> class.
+            </summary>
+            <param name="currentTime">The current time.</param>
+            <param name="duration">The duration.</param>
+            <param name="rate">The rate of playback.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerStateChangedEventArgs">
+            <summary>
+            Contains information about video player state transitions.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerStateChangedEventArgs.CurrentState">
+            <summary>
+            The current state of the video player.
+            </summary>
+            <value>
+            The state of the video player.
+            </value>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerStateChangedEventArgs.#ctor(Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerStateChangedEventArgs"/> class.
+            </summary>
+            <param name="currentState">State of the current.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerStateChangedEventArgs.#ctor(System.TimeSpan,System.TimeSpan,System.Single,Octane.Xamarin.Forms.VideoPlayer.Constants.PlayerState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs" /> class.
+            </summary>
+            <param name="currentTime">The current time.</param>
+            <param name="duration">The duration.</param>
+            <param name="rate">The rate of playback.</param>
+            <param name="currentState">State of the current.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.AssemblyExtensions">
+            <summary>
+            Assembly extension methods.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.AssemblyExtensions.ContainsManifestResource(System.Reflection.Assembly,System.String)">
+            <summary>
+            Determines whether the assembly contains the specified resource name.
+            </summary>
+            <param name="assembly">The assembly.</param>
+            <param name="resourceName">The name of the embedded resource.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.AssemblyExtensions.GetEmbeddedResourceStream(System.Reflection.Assembly,System.String)">
+            <summary>
+            Attempts to find and return the given resource from within the specified assembly.
+            </summary>
+            <returns>The embedded resource stream.</returns>
+            <param name="assembly">The assembly.</param>
+            <param name="resourceFileName">Resource file name.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.AssemblyExtensions.GetEmbeddedResourceBytes(System.Reflection.Assembly,System.String)">
+            <summary>
+            Attempts to find and return the given resource from within the specified assembly.
+            </summary>
+            <returns>The embedded resource as a byte array.</returns>
+            <param name="assembly">Assembly.</param>
+            <param name="resourceFileName">Resource file name.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.AssemblyExtensions.GetEmbeddedResourceString(System.Reflection.Assembly,System.String)">
+            <summary>
+            Attempts to find and return the given resource from within the specified assembly.
+            </summary>
+            <returns>The embedded resource as a string.</returns>
+            <param name="assembly">Assembly.</param>
+            <param name="resourceFileName">Resource file name.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.EventHandlerExtensions">
+            <summary>
+            EventHandler extension methods.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.EventHandlerExtensions.RaiseEvent(System.EventHandler,System.Object,System.EventArgs)">
+            <summary>
+            Raises the event.
+            </summary>
+            <param name="eventHandler">The event handler.</param>
+            <param name="sender">The event sender.</param>
+            <param name="eventArgs">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.ExtensionMethods.EventHandlerExtensions.RaiseEvent``1(System.EventHandler{``0},System.Object,``0)">
+            <summary>
+            Raises the event.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
+            <param name="eventHandler">The event handler.</param>
+            <param name="sender">The event sender.</param>
+            <param name="eventArgs">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource">
+            <summary>
+            An <see cref="T:Octane.Xamarin.Forms.VideoPlayer.VideoSource"/> that reads a video from a file.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.FileProperty">
+            <summary>
+            Backing store for the <see cref="P:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.File"/> property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.File">
+            <summary>
+            Gets or sets the file from which this <see cref="T:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource"/> will load a video.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.op_Implicit(System.String)~Octane.Xamarin.Forms.VideoPlayer.FileVideoSource">
+            <summary>
+            Allows implicit casting from a string.
+            </summary>
+            <param name="file">The file.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.op_Implicit(Octane.Xamarin.Forms.VideoPlayer.FileVideoSource)~System.String">
+            <summary>
+            Allows implicit casting to a string.
+            </summary>
+            <param name="file">The file.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.OnPropertyChanged(System.String)">
+            <summary>
+            Method that is called when the property that is specified by <paramref name="propertyName" /> is changed.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.Cancel">
+            <summary>
+            Request a cancel of the VideoSource loading.
+            </summary>
+            <remarks>
+            Overriden for FileVideoSource. FileVideoSource are not cancellable, so this will always return
+            a completed Task with <see langword="false"/> as Result.
+            </remarks>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.FileVideoSource.Equals(Octane.Xamarin.Forms.VideoPlayer.VideoSource)">
+            <summary>
+            Determines if two video sources are equivalent.
+            </summary>
+            <param name="other">The other video source.</param>
+            <returns>
+            True if the video sources are equal, false otherwise.
+            </returns>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.FileVideoSourceConverter">
+            <summary>
+            Converts a source type into a FileVideoSource.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.FileVideoSourceConverter.ConvertFromInvariantString(System.String)">
+            <summary>
+            When overriden in a derived class, converts XAML extension syntax into instances of various <see cref="N:Xamarin.Forms" /> types.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IPlatformFeatures.PackageName">
+            <summary>
+            Gets the name of the package.
+            </summary>
+            <value>
+            The name of the package.
+            </value>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IPlatformFeatures.HashSha1(System.String)">
+            <summary>
+            Hashes the specified value using SHA-1.
+            </summary>
+            <param name="value">The value to hash.</param>
+            <returns>
+            A base-64 encoded SHA-1 hash.
+            </returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IPlatformFeatures.Exit">
+            <summary>
+            Exits the mobile application.
+            </summary>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer">
+            <summary>
+            Provides a common set of properties and operations for platform specific video player renderers.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.Play">
+            <summary>
+            Plays the video.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.CanPlay">
+            <summary>
+            Determines if the video player instance can play.
+            </summary>
+              <c>true</c> if this instance can play; otherwise, <c>false</c>.
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.Pause">
+            <summary>
+            Pauses the video.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.CanPause">
+            <summary>
+            Determines if the video player instance can pause.
+            </summary>
+              <c>true</c> if this instance can pause; otherwise, <c>false</c>.
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.Stop">
+            <summary>
+            Stops the video.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.CanStop">
+            <summary>
+            Determines if the video player instance can stop.
+            </summary>
+              <c>true</c> if this instance can stop; otherwise, <c>false</c>.
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.Seek(System.Int32)">
+            <summary>
+            Seeks a specific number of seconds into the playback stream.
+            </summary>
+            <param name="seekTime">The seek time.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoPlayerRenderer.CanSeek(System.Int32)">
+            <summary>
+            Determines if the video player instance can seek.
+            </summary>
+            <param name="time">The time in seconds.</param>
+            <returns></returns>
+            <c>true</c> if this instance can stop; otherwise, <c>false</c>.
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.Interfaces.IVideoSourceHandler.LoadVideoAsync(Octane.Xamarin.Forms.VideoPlayer.VideoSource,System.Threading.CancellationToken)">
+            <summary>
+            Loads the video from the specified source.
+            </summary>
+            <param name="source">The source of the video file.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The path to the video file.</returns>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.PreserveAttribute">
+            <summary>
+            Preserves a member during Xamarin linker passes.
+            </summary>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource">
+            <summary>
+            <see cref="T:Octane.Xamarin.Forms.VideoPlayer.VideoSource"/> that loads a video from a <see cref="T:System.IO.Stream"/>.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource.Format">
+            <summary>
+            The video container format denoted by the file extension (e.g. Format = "mp4")
+            </summary>
+            <value>The containerformat.</value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource.StreamProperty">
+            <summary>
+            Backing store for the <see cref="P:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource.Stream"/> property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource.Stream">
+            <summary>
+            Gets or sets the delegate responsible for returning a <see cref="T:System.IO.Stream" /> for the video player.
+            </summary>
+            <value>
+            The stream.
+            </value>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource.OnPropertyChanged(System.String)">
+            <summary>
+            Method that is called when the property that is specified by <paramref name="propertyName" /> is changed.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource.GetStreamAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the stream asynchronously.
+            </summary>
+            <param name="userToken">The user token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.StreamVideoSource.Equals(Octane.Xamarin.Forms.VideoPlayer.VideoSource)">
+            <summary>
+            Determines if two video sources are equivalent.
+            </summary>
+            <param name="other">The other video source.</param>
+            <returns>
+            True if the video sources are equal, false otherwise.
+            </returns>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.UriVideoSource">
+            <summary>
+            A VideoSource that loads a video from a URI.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.UriVideoSource.UriProperty">
+            <summary>
+            Backing store for the <see cref="P:Octane.Xamarin.Forms.VideoPlayer.UriVideoSource.Uri"/> property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.UriVideoSource.Uri">
+            <summary>
+            Gets or sets the URI for the video to get.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.UriVideoSource.OnPropertyChanged(System.String)">
+            <summary>
+            Method that is called when the property that is specified by <paramref name="propertyName" /> is changed.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.UriVideoSource.Equals(Octane.Xamarin.Forms.VideoPlayer.VideoSource)">
+            <summary>
+            Determines if two video sources are equivalent.
+            </summary>
+            <param name="other">The other video source.</param>
+            <returns>
+            True if the video sources are equal, false otherwise.
+            </returns>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer">
+            <summary>
+            A Xamarin Forms control that renders the native platform video player and reacts to touch events.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.NativeRenderer">
+            <summary>
+            The native video player renderer.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.StatePropertyKey">
+            <summary>
+            The is state property key.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.StateProperty">
+            <summary>
+            Identifies the State bindable property.
+            </summary>
+            
+            <remarks>
+            This bindable property is readonly.
+            </remarks>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.State">
+            <summary>
+            The current state of the video player.
+            </summary>
+            <value>
+            A <see cref="T:PlayerState"/> indicating the current state of the video player. The default is PlayerState.Idle.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.CurrentTimePropertyKey">
+            <summary>
+            The CurrentTime property key.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.CurrentTimeProperty">
+            <summary>
+            Identifies the CurrentTime bindable property.
+            </summary>
+            
+            <remarks>
+            This bindable property is readonly.
+            </remarks>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.CurrentTime">
+            <summary>
+            The current time of the video player.
+            </summary>
+            <value>
+            A <see cref="T:TimeSpan"/> representing the current position in the playback timeline.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.IsLoadingPropertyKey">
+            <summary>
+            The is loading property key
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.IsLoadingProperty">
+            <summary>
+            Identifies the IsLoading bindable property.
+            </summary>
+            
+            <remarks>
+            This bindable property is readonly.
+            </remarks>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.IsLoading">
+            <summary>
+            The current loading status of the video. Useful for determining when buffering cccurs.
+            </summary>
+            
+            <value>
+            A <see cref="T:System.Boolean"/> indicating if the video is loading. Default is false.
+            </value>
+            
+            <remarks>
+            
+            <para>
+            The following example illustrates running a  <see cref="T:Xamarin.Forms.ActivityIndicator"/> to indicate that the video is loading:
+            </para>
+            
+            <example>
+            
+            <code lang="C#">
+            <![CDATA[
+            var videoPlayer = new VideoPlayer {
+              Source = new VideoLoader {
+                Uri = new Uri ("http://video-js.zencoder.com/oceans-clip.mp4")
+              },
+              HeightRequest = 300
+            };
+            
+            var indicator = new ActivityIndicator {Color = new Color (.5),};
+            indicator.SetBinding (ActivityIndicator.IsRunningProperty, "IsLoading");
+            indicator.BindingContext = videoPlayer;]]>
+            </code>
+            
+            </example>
+            
+            </remarks>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.AutoPlayProperty">
+            <summary>
+            The automatic play property
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.AutoPlay">
+            <summary>
+            Specifies that the video will start playing as soon as it is ready.
+            </summary>
+            <value>
+              <c>true</c> plays the video automatically when it starts up; otherwise, <c>false</c>. Default is <c>false</c>.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.DisplayControlsProperty">
+            <summary>
+            The display controls property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.DisplayControls">
+            <summary>
+            Specifies that video controls should be displayed (such as a play and pause button).
+            </summary>
+            <value>
+              <c>true</c> if video controls should be displayed; otherwise, <c>false</c>. Default is <c>true</c>.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.FillModeProperty">
+            <summary>
+            The FillMode bindable property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.FillMode">
+            <summary>
+            Defines how the video content is displayed within the player layer's bounds.
+            </summary>
+            <value>
+            The video gravity. Default is ResizeAspect.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.TimeElapsedIntervalProperty">
+            <summary>
+            The TimeElapsedIntervalProperty bindable property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.TimeElapsedInterval">
+            <summary>
+            The time interval in seconds for the TimeElapsed event firing to occur.
+            Default is 0 seconds which means TimeElapsed will not fire.
+            If you use TimeElapsed, it is recommended to set this value to fire less frequently for better peroformance.
+            </summary>
+            <value>
+            The TimeElapsed event firing interval.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.RepeatProperty">
+            <summary>
+            The RepeatProperty bindable property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Repeat">
+            <summary>
+            Repeat video when playback is complete. Default is false.
+            </summary>
+            <value>
+            The TimeElapsed event firing interval.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.VolumeProperty">
+            <summary>
+            The Volume bindable property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Volume">
+            <summary>
+            The volume level of the current media stream.
+            If this property is not set, it defaults to the current media volume setting of the mobile device.
+            Valid values are 0 (muted) - 100 (max volume)
+            </summary>
+            <value>
+            The volume level percentage.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.SourceProperty">
+            <summary>
+            The source bindable property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Source">
+            <summary>
+            A local file path or remote URL to a video file.
+            </summary>
+            <value>
+            The path where this video file is located.
+            </value>
+        </member>
+        <member name="E:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Playing">
+            <summary>
+            Notification the playback rate has changed to a non-zero rate.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.OnPlaying(Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs)">
+            <summary>
+            Raises the <see cref="E:Playing" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Paused">
+            <summary>
+            Notification the playback rate has changed to zero.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.OnPaused(Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs)">
+            <summary>
+            Raises the <see cref="E:Pause" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.TimeElapsed">
+            <summary>
+            Notification the specified number of seconds configured in the `VideoPlayer.TimeElapsedInterval` have passed.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.OnTimeElapsed(Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs)">
+            <summary>
+            Raises the <see cref="E:TimeElapsed" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Completed">
+            <summary>
+            Notification fires when the video player has reached the end of the playback stream.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.OnCompleted(Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs)">
+            <summary>
+            Raises the <see cref="E:Completed" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Failed">
+            <summary>
+            Notification fires when the video player experiences an error during playback or during initialization of the media file.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.OnFailed(Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerErrorEventArgs)">
+            <summary>
+            Raises the <see cref="E:Failed" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.PlayerStateChanged">
+            <summary>
+            Event notification fires when the video player's internal state machine changes state.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.OnPlayerStateChanged(Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerStateChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:PlayerStateChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Octane.Xamarin.Forms.VideoPlayer.Events.VideoPlayerStateChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.PlayCommandProperty">
+            <summary>
+            The play command property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.PlayCommand">
+            <summary>
+            Begins video playback.
+            </summary>
+            <value>
+            The play command.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.PauseCommandProperty">
+            <summary>
+            The pause command property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.PauseCommand">
+            <summary>
+            Pauses video playback.
+            </summary>
+            <value>
+            The pause command.
+            </value>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.SeekCommandProperty">
+            <summary>
+            The seek command property.
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.SeekCommand">
+            <summary>
+            This command seeks a specific number of seconds forward or backward in the playback stream.
+            For example, a command parameter of -3 seeks 3 seconds back.
+            </summary>
+            <value>
+            The seek command.
+            </value>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer"/> class.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer" /> class.
+            </summary>
+            <param name="source">The video source.</param>
+            <param name="autoPlay">Specifies that the video will start playing as soon as it is ready.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.#ctor(Octane.Xamarin.Forms.VideoPlayer.VideoSource,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer"/> class.
+            </summary>
+            <param name="source">The video source.</param>
+            <param name="autoPlay">Specifies that the video will start playing as soon as it is ready.</param>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Play">
+            <summary>
+            Begins video playback. 
+            Only functions if the video player has entered a valid state (i.e. prepared).
+            It may be best to hook into the <c>PlayerStateChanged</c> event to listen for the prepared or paused state before calling this method directly.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Pause">
+            <summary>
+            Pauses video playback.
+            Only functions if the video player has a non-zero playback rate.
+            It may be best to hook into the <c>PlayerStateChanged</c> event to listen for the playing or prepared state before calling this method directly.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoPlayer.Seek(System.Int32)">
+            <summary>
+            Seeks a specific number of seconds forward or backward in the playback stream.
+            For example, a time of -3 seeks 3 seconds back.
+            It may be best to hook into the <c>PlayerStateChanged</c> event to listen for the prepared state before calling this method directly.
+            </summary>
+            <param name="time">The time in seconds to seek forward or backward.</param>
+        </member>
+        <member name="T:Octane.Xamarin.Forms.VideoPlayer.VideoSource">
+            <summary>
+            Loads videos from files or the web.
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoSource._syncHandle">
+            <summary>
+            The synchronize handle
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoSource._cancellationTokenSource">
+            <summary>
+            The cancellation token source
+            </summary>
+        </member>
+        <member name="F:Octane.Xamarin.Forms.VideoPlayer.VideoSource._completionSource">
+            <summary>
+            The completion source
+            </summary>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoSource.CancellationTokenSource">
+            <summary>
+            Gets the CancellationTokenSource.
+            </summary>
+            <remarks>
+            Used by inheritors to implement cancellable loads.
+            </remarks>
+        </member>
+        <member name="P:Octane.Xamarin.Forms.VideoPlayer.VideoSource.IsLoading">
+            <summary>
+            Determines whether a video is loading.
+            </summary>
+            <value>
+              <c>true</c> if this instance is loading; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:Octane.Xamarin.Forms.VideoPlayer.VideoSource.SourceChanged">
+            <summary>
+            Occurs when the video source changes.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octane.Xamarin.Forms.VideoPlayer.VideoSource" /> class.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.op_Implicit(System.String)~Octane.Xamarin.Forms.VideoPlayer.VideoSource">
+            <summary>
+            Allows implicit casting from a string that represents an absolute URI.
+            </summary>
+            <param name="source">The source of the video file.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.op_Implicit(System.Uri)~Octane.Xamarin.Forms.VideoPlayer.VideoSource">
+            <summary>
+            Allows implicit casting from <see cref="T:System.Uri" /> objects that were created with an absolute URI.
+            </summary>
+            <param name="uri">The URI.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.OnSourceChanged">
+            <summary>
+            Called by inheritors to indicate that the source changed.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.FromFile(System.String)">
+            <summary>
+            Returns a new <see cref="T:Xamarin.Forms.FileVideoSource"/> that reads from <paramref name="file"/>.
+            </summary>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.FromStream(System.Func{System.IO.Stream},System.String)">
+            <summary>
+            Returns a new <see cref="T:Xamarin.Forms.StreamVideoSource" /> that reads from <paramref name="stream" />.
+            </summary>
+            <param name="stream">The lambda responsible for extracting the stream.</param>
+            <param name="format">The stream container format (i.e. "mp4", "webm", etc.)</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.FromResource(System.String,System.Reflection.Assembly)" -->
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.FromUri(System.String)">
+            <summary>
+            Returns a new <see cref="T:Xamarin.Forms.UriVideoSource" /> that reads from <paramref name="uri" />.
+            </summary>
+            <param name="uri">The URI.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">uri is relative</exception>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.FromUri(System.Uri)">
+            <summary>
+            Returns a new <see cref="T:Xamarin.Forms.UriVideoSource" /> that reads from <paramref name="uri" />.
+            </summary>
+            <param name="uri">The URI.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">uri is relative</exception>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.OnLoadingStarted">
+            <summary>
+            Called by inheritors to indicate the beginning of a loading operation.
+            </summary>
+            
+            <remarks>
+            OnLoadingCompleted should follow a OnLoadingStarted.
+            </remarks>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.OnLoadingCompleted(System.Boolean)">
+            <param name="cancelled">A bool indicating if the source was cancelled.</param>
+            <summary>
+            Called by inheritors to indicate the end of the loading of the source.
+            </summary>
+            
+            <remarks>
+            OnLoadingCompleted should follow a OnLoadingStarted.
+            </remarks>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.Cancel">
+            <summary>
+            Request a cancel of the VideoSource loading.
+            </summary>
+            <remarks>
+            Calling Cancel() multiple times will throw an exception.
+            </remarks>
+            <returns>
+            An awaitable Task. The result of the Task indicates if the Task was successfully cancelled.
+            </returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSource.Equals(Octane.Xamarin.Forms.VideoPlayer.VideoSource)">
+            <summary>
+            Determines if two video sources are equivalent.
+            </summary>
+            <param name="other">The other video source.</param>
+            <returns>True if the video sources are equal, false otherwise.</returns>
+        </member>
+        <member name="M:Octane.Xamarin.Forms.VideoPlayer.VideoSourceConverter.CanConvertFrom(System.Type)">
+            <summary>
+            Determines whether this instance [can convert from] the specified source type.
+            </summary>
+            <param name="sourceType">Type of the source.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

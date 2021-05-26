@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.More"
+             Title="MORE">-->
+
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"                      
+             x:Class="Stance.Pages.Sub.More"
+             Title="MORE">
+
+    <StackLayout x:Name="MoreInfo"  HorizontalOptions="CenterAndExpand" >
+        <TableView x:Name="TableViewMain" Intent="Menu" >
+            <TableRoot>
+                <TableSection Title="ABOUT">
+
+                    <ViewCell>
+                        <StackLayout x:Name="TermsSL" Orientation="Horizontal" Padding="13,0" >
+                            <StackLayout  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                                <Label Text="Terms of Use" FontSize="16" />
+                            </StackLayout>
+                            <StackLayout  HorizontalOptions="End" VerticalOptions="CenterAndExpand"  Spacing="0">
+                                <Image Source="Arrow_26.png" HorizontalOptions="End" HeightRequest="20"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout x:Name="PolicySL" Orientation="Horizontal" Padding="13,0"  >
+                            <StackLayout  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                                <Label Text="Privacy Policy" FontSize="16" />
+                            </StackLayout>
+                            <StackLayout  HorizontalOptions="End" VerticalOptions="CenterAndExpand"  Spacing="0">
+                                <Image Source="Arrow_26.png" HorizontalOptions="End" HeightRequest="20"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                </TableSection>
+                <TableSection Title="SUPPORT">
+                    <ViewCell>
+                        <StackLayout x:Name="ContactUsSL" Orientation="Horizontal" Padding="13,0"  >
+                            <StackLayout  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                                <Label Text="Contact Us" FontSize="16" />
+                            </StackLayout>
+                            <StackLayout  HorizontalOptions="End" VerticalOptions="CenterAndExpand"  Spacing="0">
+                                <Image Source="Arrow_26.png" HorizontalOptions="End" HeightRequest="20"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout x:Name="FeedbackSL" Orientation="Horizontal" Padding="13,0" >
+                            <StackLayout  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                                <Label Text="Provide Feedback" FontSize="16" />
+                            </StackLayout>
+                            <StackLayout  HorizontalOptions="End" VerticalOptions="CenterAndExpand"  Spacing="0">
+                                <Image Source="Arrow_26.png" HorizontalOptions="End" HeightRequest="20"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection Title="ACCOUNT">
+                    <ViewCell>
+                        <StackLayout x:Name="RefreshSL" Orientation="Horizontal" Padding="13,0" >
+                            <StackLayout  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                                <Label Text="Refresh App (reload/resolve)" FontSize="16" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout x:Name="SignOutSL" Orientation="Horizontal" Padding="13,0" >
+                            <StackLayout  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                                <Label Text="Log Out" FontSize="16" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</d:BaseContentPage>

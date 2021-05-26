@@ -1,0 +1,96 @@
+﻿<Properties StartupConfiguration="{B1DE4469-74FD-479E-9D82-BEC9A72B4C1E}|Default">
+  <MonoDevelop.Ide.ItemProperties.Stance.Droid AndroidDesignerPreferredDevice="Nexus 4" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.R9ZR1011SFN" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Stance.Core/Models/VideoPlayer.cs">
+    <Files>
+      <File FileName="Stance/Stance.Droid/CustomControll/CustomProgressBarRendererForRest.cs" Line="1" Column="1" />
+      <File FileName="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" />
+      <File FileName="Stance/Stance.Droid/AudioService.cs" />
+      <File FileName="Stance.Core/Pages/Sub/WorkoutSurvey.xaml" />
+      <File FileName="Stance.Core/Pages/Sub/SignIn.xaml" />
+      <File FileName="Stance.Core/Pages/Sub/IAP_FIF.xaml.cs" />
+      <File FileName="Stance.Core/Pages/Sub/IAP.xaml.cs" />
+      <File FileName="Stance.Core/Utils/BaseContentPage.cs" />
+      <File FileName="Stance.Core/Utils/WebAPIService.cs" />
+      <File FileName="Stance.Core/App.xaml.cs" />
+      <File FileName="Stance.Core/Pages/Sub/IAP.xaml" />
+      <File FileName="Stance/Stance.Droid/MainActivity.cs" />
+      <File FileName="Stance/Stance.Droid/Properties/AndroidManifest.xml" />
+      <File FileName="Stance.Core/Models/LocalDB/LocalDBIAP.cs" />
+      <File FileName="Stance.Core/ViewModels/RandomVMs.cs" />
+      <File FileName="Stance.Core/Models/VideoPlayer.cs" Line="10" Column="29" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Stance" expanded="True">
+            <Node name="Stance" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="VideoPlayer.cs" selected="True" />
+              </Node>
+              <Node name="Pages" expanded="True">
+                <Node name="Main" expanded="True" />
+                <Node name="Sub" expanded="True" />
+              </Node>
+              <Node name="ViewModels" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/CreateAccount.xaml.cs" relfile="Stance.Core/Pages/Sub/CreateAccount.xaml.cs" line="197" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/CreateAccount.xaml.cs" relfile="Stance.Core/Pages/Sub/CreateAccount.xaml.cs" line="174" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/WorkoutSetting.xaml.cs" relfile="Stance.Core/Pages/Sub/WorkoutSetting.xaml.cs" line="23" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/RecommendedBy.xaml.cs" relfile="Stance.Core/Pages/Sub/RecommendedBy.xaml.cs" line="93" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/CreateAccount.xaml.cs" relfile="Stance.Core/Pages/Sub/CreateAccount.xaml.cs" line="215" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance/Stance.Droid/CustomControll/ExtendedTabbedPageRenderer.cs" relfile="Stance/Stance.Droid/CustomControll/ExtendedTabbedPageRenderer.cs" line="230" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance/Stance.Droid/CustomControll/ExtendedTabbedPageRenderer.cs" relfile="Stance/Stance.Droid/CustomControll/ExtendedTabbedPageRenderer.cs" line="228" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance/Stance.Droid/CustomControll/ExtendedTabbedPageRenderer.cs" relfile="Stance/Stance.Droid/CustomControll/ExtendedTabbedPageRenderer.cs" line="236" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="850" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="1160" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="1251" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="1282" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="1383" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="1684" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="2229" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="2282" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="2318" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="2625" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="2643" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDayOverview.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDayOverview.xaml.cs" line="324" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance/Stance.Droid/AudioService.cs" relfile="Stance/Stance.Droid/AudioService.cs" line="53" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" relfile="Stance.Core/Pages/Main/Workout_MainPage.xaml.cs" line="3456" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance/Stance.Droid/MainActivity.cs" relfile="Stance/Stance.Droid/MainActivity.cs" line="75" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="2595" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="166" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="207" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="236" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="258" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="246" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="1137" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="1493" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="1890" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/App.xaml.cs" relfile="Stance.Core/App.xaml.cs" line="324" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDayOverview.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDayOverview.xaml.cs" line="230" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="563" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" relfile="Stance.Core/Pages/Sub/ProgramDay_v2.xaml.cs" line="1835" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP_FIF.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP_FIF.xaml.cs" line="331" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP.xaml.cs" line="196" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP.xaml.cs" line="207" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP.xaml.cs" line="241" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP.xaml.cs" line="252" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP.xaml.cs" line="286" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP.xaml.cs" line="239" column="1" />
+      <Breakpoint file="/Users/imac/MyProject/MyProject/Stance/Stance.Core/Pages/Sub/IAP.xaml.cs" relfile="Stance.Core/Pages/Sub/IAP.xaml.cs" line="243" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Stance.iOS Xamarin.HotReload.WrongLinkerErrorInfoBar.Stance.iOS.HideInfoBar="True" automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BF1D0ADF-945E-4E7C-A3AB-91D4896FDB64" />
+  <MultiItemStartupConfigurations />
+</Properties>

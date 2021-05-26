@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"                   
+             x:Class="Stance.Pages.Main.Athletes_MainPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"                   
+             Title="ATHLETES">
+
+    <NavigationPage.TitleView >
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="0" >
+            <Image Source="Cartelle_112X19_White.png" VerticalOptions="CenterAndExpand" Margin="45,0,0,0">
+            </Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout x:Name="MainContentStackLayout" Spacing="0" >
+        <StackLayout Spacing="0" BackgroundColor="#17191A" >
+            <SearchBar x:Name="SearchBar"  Placeholder="Search" TextChanged="Handle_TextChanged" Margin="0,0,0,0" BackgroundColor="#555757" />
+        </StackLayout>
+        <StackLayout Spacing="0" BackgroundColor="#17191A" >
+            <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="13" FontFamily="PingFangTC-Regular" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+        <StackLayout x:Name="NoResultsStackLayout" HeightRequest="300" Opacity="0.6" Spacing="0" BackgroundColor="White">
+            <Label Text="No Results Found..." TextColor="#939598" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" ></Label>
+        </StackLayout>
+        <StackLayout Spacing="0" VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+            <!--<StackLayout x:Name="NotLoadedYet" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="50,50,50,50" >
+        <ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="#17191A" IsRunning="True" />
+      </StackLayout>-->
+
+            <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorColor="White" ItemSelected="Handle_ItemSelected" ItemTapped="Handle_ItemTapped" IsPullToRefreshEnabled="True" Refreshing="Handle_Refreshing" HasUnevenRows="True" HeightRequest="3000">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <RelativeLayout BackgroundColor="#909090" HeightRequest="{OnPlatform Android='300'}" >
+
+                                <ffimageloading:CachedImage x:Name="athleteImage" Source="{Binding PhotoUrl}" Aspect="AspectFill"
+                                                            RetryCount="5" RetryDelay="250" BitmapOptimizations="true"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+                                <!--<Image x:Name="athleteImage" Source="{Binding PhotoUrl}" Aspect="AspectFill"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />-->
+
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  Spacing="0"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+                                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                                        <StackLayout  HorizontalOptions="Start" Spacing="0">
+                                            <ActivityIndicator x:Name="Spinner"
+                                       HorizontalOptions="FillAndExpand" Color="White" Margin="30,0,0,0" />
+                                            <!-- IsRunning="{Binding Source={x:Reference athleteImage}, Path=IsLoading}"
+                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"-->
+                                        </StackLayout>
+
+                                        <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                                            <Label Text="{Binding Heading}" FontSize="24" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+
+                                        <StackLayout  HorizontalOptions="End" VerticalOptions="CenterAndExpand"  Spacing="0">
+                                            <Image BackgroundColor="Transparent" Source="Arrow_26.png" HorizontalOptions="End"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </RelativeLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+
+
+</d:BaseContentPage>

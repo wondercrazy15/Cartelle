@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.BottomNavigationView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/apk/res-tools"
+    android:id="@+id/sliding_tabs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    app:labelVisibilityMode="labeled"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:tabGravity="fill"
+   
+    app:tabTextAppearance="?android:attr/textAppearanceSmall"
+    style="@style/MyTabLayout"
+    tools:override="true"
+    app:tabTextColor="@android:color/darker_gray"
+    app:tabMode="fixed" />
+

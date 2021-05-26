@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils"   
+             x:Class="Stance.Pages.Sub.WorkoutSetting">
+
+    <AbsoluteLayout BackgroundColor="#24394C" x:Name="MainContainer" >
+
+        <Image Source="blurredBG3x.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+        
+        <StackLayout BackgroundColor="Transparent" Spacing="0"  Margin="{OnPlatform Android='0,20,0,0',iOS='0,40,0,0'}" AbsoluteLayout.LayoutBounds="0,0,1,100" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+            <StackLayout Spacing="0"  >
+                <Button Image="Arrow_26.png" BackgroundColor="Transparent"  Clicked="Close_Clicked" HorizontalOptions="Start"  HeightRequest="25" WidthRequest="25" Rotation="180" Margin="20,0,0,0"  />
+            </StackLayout>
+            <StackLayout x:Name="LogoSL" HorizontalOptions="CenterAndExpand" Margin="0,-20,0,0" >
+                <Image x:Name="cartelleLogo" Source="cartelle_logo.png" WidthRequest="140" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="0,10,0,0"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout  BackgroundColor="Transparent" Spacing="0" AbsoluteLayout.LayoutBounds="0.5,0.5,1,250" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+            <StackLayout BackgroundColor="Transparent" Spacing="0" >
+                <Label BackgroundColor="Transparent" Text="I am working out at" Font="HelveticalNeue-Bold" FontSize="18" TextColor="White" HorizontalOptions="Center" />
+                <StackLayout HorizontalOptions="Center" Spacing="15" Margin="0,20,0,0"  Orientation="Horizontal">
+                    <Button BackgroundColor="Transparent" x:Name="GymBtn" Clicked="Gym_Clicked"  HeightRequest="150"  WidthRequest="150" Image="gym2x.png"/>
+                    <Button BackgroundColor="Transparent" x:Name="HomeBtn" Clicked="Home_Clicked"  HeightRequest="150"  WidthRequest="150" Image="home2x.png"/>
+                </StackLayout>
+            </StackLayout>
+                      
+        </StackLayout>
+    </AbsoluteLayout>    
+</d:BaseContentPage>

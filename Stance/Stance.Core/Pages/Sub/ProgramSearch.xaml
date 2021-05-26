@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils"   
+             xmlns:controls="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions"
+             x:Class="Stance.Pages.Sub.ProgramSearch"
+             Title="CHOOSE A PROGRAM">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="CHOOSE A PROGRAM" TextColor="White" HorizontalTextAlignment="Center"
+                   FontSize="Body" HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"   />
+           
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <StackLayout Spacing="0" BackgroundColor="White" >
+
+        <StackLayout Spacing="0" BackgroundColor="White" >
+            <StackLayout x:Name="TitleSL" Spacing="0" BackgroundColor="#24394C" Padding="0,20,0,0"
+                         Orientation="Horizontal"  IsVisible="False">
+                <StackLayout Spacing="0" BackgroundColor="#24394C" HeightRequest="20" />
+                <StackLayout Spacing="0"  Orientation="Horizontal"  Margin="{OnPlatform Android='20,10,0,10',iOS='20,20,0,10'}"  VerticalOptions="CenterAndExpand">
+                    <StackLayout Spacing="0"  HorizontalOptions="Start">
+                        <Button BackgroundColor="Transparent"  Image="Arrow_26.png" Clicked="Close_Clicked" HorizontalOptions="Start"  HeightRequest="25" WidthRequest="25" Rotation="180"  />
+                    </StackLayout>
+                    <StackLayout Spacing="0"  HorizontalOptions="StartAndExpand">
+                        <Label Text="Choose Your Program" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Font="AvenirNextCondensed-Bold" FontSize="24"/>
+                    </StackLayout>
+                </StackLayout>               
+            </StackLayout>
+
+            <StackLayout x:Name="NoNetwork"  Spacing="0" BackgroundColor="#17191A" >
+                <Label Text="OFFLINE MODE" TextColor="White" FontSize="13" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Spacing="0">
+                <StackLayout x:Name="FilterSL" Spacing="5"  Margin="0,5,0,0" IsVisible="False">
+                    <StackLayout x:Name="workoutSetting" Padding="20,0,20,0" Spacing="12" WidthRequest="160" HorizontalOptions="CenterAndExpand">
+                        <controls:SegmentedControl x:Name="workoutSettingControl" ValueChanged="Handle_ValueChanged_WorkoutSetting" TintColor="#00BBCB" >
+                            <controls:SegmentedControl.Children >
+                                <controls:SegmentedControlOption Text="Home" />
+                                <controls:SegmentedControlOption Text="Gym" />
+                            </controls:SegmentedControl.Children>
+                        </controls:SegmentedControl>
+                        <StackLayout x:Name="workoutSettingContent" IsVisible="False" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="goalSetting" Padding="20,0,20,0" Spacing="12" WidthRequest="240" HorizontalOptions="CenterAndExpand">
+                        <controls:SegmentedControl x:Name="goalSettingControl" ValueChanged="Handle_ValueChanged_GoalSetting" TintColor="#3E8DB2">
+                            <controls:SegmentedControl.Children >
+                                <controls:SegmentedControlOption Text="Tone Up" />
+                                <controls:SegmentedControlOption Text="Fat Loss" />
+                                <controls:SegmentedControlOption Text="Strengthen" />
+                            </controls:SegmentedControl.Children>
+                        </controls:SegmentedControl>
+                        <StackLayout x:Name="goalSettingContent" IsVisible="False" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="startingLevelSetting" Padding="20,0,20,0" Spacing="12" WidthRequest="320" HorizontalOptions="CenterAndExpand">
+                        <controls:SegmentedControl x:Name="startingLevelControl" ValueChanged="Handle_ValueChanged_StartingLevelSetting"  TintColor="#1C516B">
+                            <controls:SegmentedControl.Children >
+                                <controls:SegmentedControlOption Text="Beginner" />
+                                <controls:SegmentedControlOption Text="Intermediate" />
+                                <controls:SegmentedControlOption Text="Advanced" />
+                            </controls:SegmentedControl.Children>
+                        </controls:SegmentedControl>
+                        <StackLayout x:Name="startingLevelSettingContent" IsVisible="False" />
+                    </StackLayout>
+                    <StackLayout HeightRequest="1" BackgroundColor="#939598" Spacing="0" Margin="0,0,0,0" />
+                </StackLayout>
+
+                <!--<StackLayout VerticalOptions="CenterAndExpand" Orientation="Horizontal" HeightRequest="32" BackgroundColor="#17191A" Spacing="0">
+                    <Label Text="PROGRAMS" TextColor="White" FontSize="16" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" Margin="60,0,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Button x:Name="RefreshBtn" WidthRequest="60" Text="Refresh" TextColor="White" FontSize="10" FontAttributes="Bold" Clicked="RefreshBtn_Clicked" HorizontalOptions="End"  VerticalOptions="CenterAndExpand" Margin="0,0,0,0"/>
+                </StackLayout>-->
+
+                <ScrollView x:Name="ScrollViewPrograms" >
+                    <StackLayout Spacing="0" >
+                        <StackLayout x:Name="NotLoadedYet" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="0,10,0,10" Margin="0,25,0,25">
+                            <ActivityIndicator x:Name="Spinner2" HorizontalOptions="CenterAndExpand" Color="#555757" IsRunning="True" />
+                        </StackLayout>
+                        <StackLayout x:Name="NoResultsStackLayout" HeightRequest="300" Opacity="0.6" Spacing="0" BackgroundColor="White" IsVisible="False">
+                            <Label Text="No Results Found..." TextColor="#939598" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                        <StackLayout x:Name="listOfPrograms" Spacing="1" BackgroundColor="White" />
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</d:BaseContentPage>

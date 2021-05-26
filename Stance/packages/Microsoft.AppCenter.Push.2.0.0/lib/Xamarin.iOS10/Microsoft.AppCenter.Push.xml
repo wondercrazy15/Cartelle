@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AppCenter.Push</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AppCenter.Push.Push">
+            <summary>
+            Push feature.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.RegisteredForRemoteNotifications(Foundation.NSData)">
+            <summary>
+            Call this from the corresponding method override in your AppDelegate.
+            </summary>
+            <param name="deviceToken">Device token.</param>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.FailedToRegisterForRemoteNotifications(Foundation.NSError)">
+            <summary>
+            Call this from the corresponding method override in your AppDelegate.
+            </summary>
+            <param name="error">Associated error.</param>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.IsEnabledAsync">
+            <summary>
+            Check whether the Push service is enabled or not.
+            </summary>
+            <returns>A task with result being true if enabled, false if disabled.</returns>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.SetEnabledAsync(System.Boolean)">
+            <summary>
+            Enable or disable the Push service.
+            </summary>
+            <returns>A task to monitor the operation.</returns>
+        </member>
+        <member name="E:Microsoft.AppCenter.Push.Push.PushNotificationReceived">
+            <summary>
+            Occurs when the application receives a push notification.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs">
+            <summary>
+            Event args for event that occurs when a push notification is received.
+            </summary>
+            <seealso cref="E:Microsoft.AppCenter.Push.Push.PushNotificationReceived"/>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.CustomData">
+            <summary>
+            Custom data attached to the push message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.Title">
+            <summary>
+            Title of the push message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.Message">
+            <summary>
+            Body of the push message
+            </summary>
+        </member>
+    </members>
+</doc>

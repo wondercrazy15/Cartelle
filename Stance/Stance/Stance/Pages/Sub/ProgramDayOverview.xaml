@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"
+             x:Class="Stance.Pages.Sub.ProgramDayOverview"
+             Title="WORKOUT PREVIEW">
+
+
+    <StackLayout Spacing="0" BackgroundColor="#007077">
+        <StackLayout x:Name="ProgramDayNameSL" HeightRequest="40" BackgroundColor="#00bac6" Spacing="0">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <Label x:Name="progDayName" FontSize="22" TextColor="White" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="DownloadSL" BackgroundColor="#00bac6" Spacing="0" HorizontalOptions="FillAndExpand">
+
+            <StackLayout HeightRequest="40" BackgroundColor="#000000" HorizontalOptions="FillAndExpand" Spacing="0" Orientation="Horizontal" Padding="10,15,10,0">
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="0">
+                    <Label x:Name="WorkoutName" Text="Workout Name" FontSize="18" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="25,0,0,0" />
+                </StackLayout>
+                <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="End" Spacing="0">
+                    <Button Image="Delete-32.png" HorizontalOptions="End" Clicked="ExitBtn_Clicked" TextColor="Black" FontSize="20"   />
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" WidthRequest="240" Spacing="0">
+                <Button x:Name="DownloadBtn" Text="DOWNLOAD" Clicked="Download_Clicked" Margin="0,5,0,3" HeightRequest="30" WidthRequest="220" FontSize="11" BorderColor="White" BorderRadius="4" BorderWidth="1" TextColor="White"  FontFamily="PingFangTC-Regular" />
+            </StackLayout>
+            <StackLayout Spacing="0">
+                <ProgressBar x:Name="ProgressBar" Progress="0" />
+            </StackLayout>
+        </StackLayout>       
+        
+        <StackLayout Spacing="0" BackgroundColor="Black" >
+            <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="13" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+        <StackLayout Spacing="0" BackgroundColor="#007077">
+
+            <ScrollView x:Name="MyScrollView">
+                <StackLayout Spacing="0" >
+
+                    <!--<StackLayout Spacing="0" HeightRequest="475">
+            <RelativeLayout BackgroundColor="Black">
+
+              <Image x:Name="programImage" Aspect="AspectFill"
+             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+              <ActivityIndicator x:Name="Spinner"
+                                 HorizontalOptions="FillAndExpand" Color="White"
+                                 IsRunning="{Binding Source={x:Reference programImage}, Path=IsLoading}"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+              <StackLayout HorizontalOptions="FillAndExpand" Padding="2,2,2,2" Spacing="2"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="2">
+
+                  <StackLayout HorizontalOptions="Start" WidthRequest="140" Padding="0,7,0,7" Spacing="0" BackgroundColor="#007077" Opacity="0.8">
+                    <Label x:Name="NumberOfExercises" TextColor="White" FontSize="14" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                    <Label Text="Exercises" TextColor="White" FontSize="13" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                  </StackLayout>
+
+                  <StackLayout HorizontalOptions="Center" WidthRequest="140" Padding="0,7,0,7" Spacing="0" BackgroundColor="#007077" Opacity="0.8">
+                    <Label x:Name="TotalTime" TextColor="White" FontSize="14" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                    <Label Text="Minutes" TextColor="White" FontSize="13" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                  </StackLayout>
+
+                  <StackLayout HorizontalOptions="End" WidthRequest="140" Padding="0,7,0,7" Spacing="0" BackgroundColor="#007077" Opacity="0.8">
+                    <Label x:Name="Level" TextColor="White" FontSize="14" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                    <Label Text="Level" TextColor="White" FontSize="13" HorizontalTextAlignment="Center"  FontFamily="HelveticalNeue-Bold" />
+                  </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="0,260,0,0" HorizontalOptions="CenterAndExpand" Spacing="0">
+
+                  <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                    <Button x:Name="PurchaseBtn" Image="Purchase_icon.png" Clicked="PurchaseBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70"/>
+                    <Label x:Name="PurchaseText" Text="PURCHASE" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="PingFangTC-Regular" />
+                  </StackLayout>
+
+                  -->
+                    <!--<StackLayout HorizontalOptions="Start" WidthRequest="120" Spacing="0">
+                  <Button x:Name="SampleBtn" Image="Sample_icon.png" Clicked="SampleBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                  <Label Text="SAMPLE" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                  <Button x:Name="VideoBtn" Image="PlayVideo_icon.png" Clicked="WatchVideoBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                  <Label Text="PLAY VIDEO" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="End" WidthRequest="120" Spacing="0">
+                  <Button x:Name="PurchaseBtn" Image="Purchase_icon.png" Clicked="PurchaseBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                  <Label Text="PURCHASE" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>-->
+                    <!--
+
+                </StackLayout>
+
+
+              </StackLayout>
+            </RelativeLayout>
+
+          </StackLayout>-->
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Padding="0,1,0,1" Spacing="0" BackgroundColor="White" >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="2" BackgroundColor="#007077">
+
+                            <StackLayout HorizontalOptions="Start" WidthRequest="140" Padding="0,5,0,5" Spacing="0" BackgroundColor="#007077" Opacity="1">
+                                <Label x:Name="NumberOfExercises" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                                <Label Text="Exercises" TextColor="White" FontSize="11" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="Center" WidthRequest="140" Padding="0,5,0,5" Spacing="0" BackgroundColor="#007077" Opacity="1">
+                                <Label x:Name="TotalTime" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                                <Label Text="Minutes" TextColor="White" FontSize="11" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="End" WidthRequest="140" Padding="0,5,0,5" Spacing="0" BackgroundColor="#007077" Opacity="1">
+                                <Label x:Name="Level" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                                <Label Text="Level" TextColor="White" FontSize="11" HorizontalTextAlignment="Center"  FontFamily="HelveticalNeue-Bold" />
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <!--<StackLayout HeightRequest="45" BackgroundColor="Black" Spacing="0">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+              <Label Text="PREVIEW" TextColor="White" FontSize="20" FontFamily="AvenirNextCondensed-Medium"  />
+            </StackLayout>
+          </StackLayout>-->
+
+
+                    <StackLayout x:Name="NotLoadedYet" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="50,50,50,50" BackgroundColor="#007077" >
+                        <ActivityIndicator x:Name="Spinner2" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True"  />
+                    </StackLayout>
+
+                    <StackLayout x:Name="listOfActions" Spacing="1" BackgroundColor="#c7c7c7"  />
+
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+
+</d:BaseContentPage>
+
+
+<!--<AbsoluteLayout>
+        <Image x:Name="programImage" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+
+
+        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,70" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+          <StackLayout HeightRequest="40" BackgroundColor="#00bac6" Spacing="0">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+              <Label x:Name="progDayName" FontSize="24" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+          </StackLayout>
+
+        </StackLayout>
+
+          <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" AbsoluteLayout.LayoutBounds="0,0.7,1,200" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+              <StackLayout HorizontalOptions="Start" WidthRequest="120" Spacing="0">
+                <Label x:Name="NumberOfExercises" TextColor="White" FontSize="17" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="PingFangTC-Regular" />
+                <Label Text="Exercises" TextColor="White" FontSize="13" HorizontalTextAlignment="Center" FontFamily="PingFangTC-Regular"  />
+              </StackLayout>
+
+              <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                <Label x:Name="TotalTime" TextColor="White" FontSize="17" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="PingFangTC-Regular" />
+                <Label Text="Approx. Time" TextColor="White" FontSize="13" HorizontalTextAlignment="Center" FontFamily="PingFangTC-Regular"  />
+              </StackLayout>
+
+              <StackLayout HorizontalOptions="End" WidthRequest="120" Spacing="0">
+                <Label x:Name="Level" TextColor="White" FontSize="17" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="PingFangTC-Regular" />
+                <Label Text="Level" TextColor="White" FontSize="13" HorizontalTextAlignment="Center"  FontFamily="PingFangTC-Regular" />
+              </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="0,40,0,0" HorizontalOptions="CenterAndExpand" Spacing="0">
+              <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                <Button x:Name="VideoBtn" Image="Go_icon.png" Clicked="WatchVideoBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+              </StackLayout>
+            </StackLayout>
+          </StackLayout>
+
+
+        <StackLayout x:Name="PreviewWorkoutBtn" BackgroundColor="Black" Spacing="0" AbsoluteLayout.LayoutBounds="1,1,1,60" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+          <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label Text="PREVIEW WORKOUT" TextColor="White" FontSize="16" FontFamily="PingFangTC-Regular" />
+          </StackLayout>
+
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                    Tapped="PreviewWorkoutBtn_Clicked"
+                    NumberOfTapsRequired="1" />
+          </StackLayout.GestureRecognizers>
+          
+        </StackLayout>
+
+      </AbsoluteLayout>-->

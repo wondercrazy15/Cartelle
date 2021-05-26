@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.ProgramOverview">
+
+
+
+  <StackLayout Spacing="0" BackgroundColor="#80bd00">
+    <StackLayout HeightRequest="50" BackgroundColor="#80bd00" Spacing="0">
+      <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+        <Label x:Name="programName" FontSize="28" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Spacing="0" BackgroundColor="Black" >
+      <Label x:Name="NoNetwork" Text="OFFLINE MODE" TextColor="White" FontSize="16" Margin="5,0,5,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+    <ScrollView>
+      <StackLayout Spacing="0" >
+        <StackLayout Spacing="0" x:Name="Screen">
+
+          <RelativeLayout BackgroundColor="Black">
+
+            <Image x:Name="programImage" Source="girl_bentover_kettlebell.jpg" Aspect="AspectFill"
+           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+            <ActivityIndicator x:Name="Spinner"
+                               HorizontalOptions="FillAndExpand" Color="White"
+                               IsRunning="{Binding Source={x:Reference programImage}, Path=IsLoading}"
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="0,220,0,0" Spacing="0"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+              <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+
+                <StackLayout HorizontalOptions="Start" WidthRequest="120" Spacing="0">
+                  <Label Text="8" TextColor="White" FontSize="17" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                  <Label Text="Weeks" TextColor="White" FontSize="13" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                  <Label Text="FAT LOST" TextColor="White" FontSize="17" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                  <Label Text="Goal" TextColor="White" FontSize="13" HorizontalTextAlignment="Center" FontFamily="HelveticalNeue-Bold"  />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="End" WidthRequest="120" Spacing="0">
+                  <Label Text="MODERATE" TextColor="White" FontSize="17" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticalNeue-Bold" />
+                  <Label Text="Level" TextColor="White" FontSize="13" HorizontalTextAlignment="Center"  FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+              </StackLayout>
+
+              <StackLayout Orientation="Horizontal" Padding="0,40,0,0" HorizontalOptions="CenterAndExpand" Spacing="0">
+
+                <StackLayout HorizontalOptions="Start" WidthRequest="120" Spacing="0">
+                  <Button x:Name="SampleBtn" Image="Sample_icon.png" Clicked="SampleBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                  <Label Text="SAMPLE" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" WidthRequest="120" Spacing="0">
+                  <Button x:Name="VideoBtn" Image="PlayVideo_icon.png" Clicked="WatchVideoBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                  <Label Text="PLAY VIDEO" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="End" WidthRequest="120" Spacing="0">
+                  <Button x:Name="PurchaseBtn" Image="Purchase_icon.png" Clicked="PurchaseBtn_Clicked" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                  <Label Text="PURCHASE" TextColor="White" FontSize="13" HorizontalOptions="Center" FontFamily="HelveticalNeue-Bold" />
+                </StackLayout>
+
+              </StackLayout>
+
+
+            </StackLayout>
+          </RelativeLayout>
+        </StackLayout>
+
+        <StackLayout HeightRequest="45" BackgroundColor="Black" Spacing="0">
+          <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label Text="VIEW PROGRAM SCHEDULE" TextColor="White" FontSize="16" FontFamily="HelveticalNeue-Bold" />
+          </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="listOfPrograms" />
+
+      </StackLayout>
+    </ScrollView>
+
+  </StackLayout>
+
+
+</ContentPage>

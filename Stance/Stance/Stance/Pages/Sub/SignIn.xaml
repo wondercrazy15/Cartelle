@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.SignIn">-->
+
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"            
+             x:Class="Stance.Pages.Sub.SignIn">
+
+    <StackLayout Spacing="0" BackgroundColor="#007077" >
+        <ScrollView>
+            <!-- Background -->
+            <!--<Image Aspect="AspectFill" Source="Default-Portrait.png" 
+           RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" />-->
+
+            <StackLayout x:Name="SignInBox" >
+                <!--<ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />-->
+
+                <StackLayout x:Name="SignInSL" Spacing="6" Padding="5,5,5,5">
+                    <Label x:Name="Welcome" Text="WELCOME TO" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontFamily="AvenirNextCondensed" FontAttributes="Bold" TextColor="White"/>
+
+                    <Image x:Name="cartelleLogo" Source="cartelle_logo.png" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" Margin="0,0,0,15" VerticalOptions="CenterAndExpand"  />
+                    
+                    <ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+                    <Label x:Name="FormValidationSpecialMessage" TextColor="Red" HorizontalTextAlignment="Center" FontSize="13" FontFamily="AvenirNextCondensed"/>
+                    <!--<Label x:Name="SignInTitle" Text="SIGN IN" FontSize="26" HorizontalTextAlignment="Center"  Margin="0,20,0,20" FontFamily="AvenirNextCondensed-Bold" FontAttributes="Bold" TextColor="White"/>-->
+                    <Entry x:Name="Email_SignIn" Keyboard="Email" Placeholder="Email" />
+                    <Entry x:Name="Password_SignIn" Keyboard="Text" Placeholder="Password" IsPassword="True" />
+                    <Button x:Name="SignInBtn" Text="SIGN IN" FontSize="22" BorderColor="White" BorderWidth="1" TextColor="White" Clicked="SignInSubmitted" FontFamily="AvenirNextCondensed-Bold"/>
+                    <Label x:Name="WelcomeText" Text="Don't have an account yet? Please contact your trainer to set up your account or visit TheCartelle.com for more info" TextColor="White" HorizontalTextAlignment="Center" FontSize="10" FontFamily="AvenirNextCondensed"/>
+                    <Button Text="Reset Password" TextColor="#4da6ff" FontSize="13" FontFamily="AvenirNextCondensed" Clicked="ResetPassword_Clicked" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</d:BaseContentPage>

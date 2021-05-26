@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils"   
+             x:Class="Stance.Pages.Sub.IAP_FIF"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             Title="MEMBERSHIPS" >
+
+    <AbsoluteLayout>
+        <Image Source="blurredBG3x.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+        <StackLayout Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout Spacing="0"  >
+
+                <StackLayout x:Name="SyncSL" HorizontalOptions="Center" Spacing="30" Margin="0,150,0,10" IsVisible="False" Padding="30,0,30,0">
+                    <Label Text="We had an issue trying to sync your purchase. Assure that you are connected to the internet and sync your purchase." TextColor="#939598" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                    <Button x:Name="SyncBtn" Text="SYNC" Clicked="SyncBtn_Clicked"  HeightRequest="50"  WidthRequest="100" FontSize="13" BackgroundColor="#1C516B" BorderRadius="25" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <ScrollView x:Name="mainScrollView">
+                    <StackLayout x:Name="IAPMainSL" VerticalOptions="CenterAndExpand" Spacing="0">
+
+                        <StackLayout Spacing="0" Margin="0,20,0,0" >
+                            <StackLayout Spacing="0" >
+                                <Button BackgroundColor="Transparent" Image="Arrow_26.png"  Clicked="Close_Clicked" HorizontalOptions="Start"  HeightRequest="25" WidthRequest="25" Rotation="180" Margin="20,0,0,0"  />
+                            </StackLayout>
+                            <StackLayout x:Name="LogoSL" HorizontalOptions="CenterAndExpand" Margin="0,-20,0,0" >
+                                <Image x:Name="cartelleLogo" Source="cartelle_logo.png" WidthRequest="140" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="0,10,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Spacing="0" Margin="0,30,0,0" >
+                            <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,0,0,0" >
+                                <Image  Source="giftbox.png" WidthRequest="140" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0">
+                            <Label Text="We Promise To Change Your Life" TextColor="White" HorizontalTextAlignment="Center" FontSize="22" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,0"/>
+                            <Label Text="Are You Ready?" TextColor="White" HorizontalTextAlignment="Center" FontSize="28" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,0"/>
+                            <Label Text="Unlimited Access to All Programs" TextColor="White" HorizontalTextAlignment="Center" FontSize="17"  FontFamily="AvenirNextCondensed"  Margin="0,0,0,0"/>
+                            <!--<Label Text="Looks like you're ready to get started! Select your preferred plan and head to your free trial. Don't fret you can cancel at anytime" TextColor="#939598" HorizontalTextAlignment="Center" FontSize="10" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,10,0,10"/>-->
+                        </StackLayout>
+
+                        <StackLayout x:Name="NotLoadedYet" Spacing="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="0,10,0,10" Margin="0,63,0,63">
+                            <ActivityIndicator x:Name="Spinner2" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+                        </StackLayout>
+
+                        <StackLayout x:Name="IAPSL" Spacing="5" Orientation="Horizontal" IsVisible="false" HorizontalOptions="CenterAndExpand" Margin="0,30,0,0" Padding="20,0,20,0">
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="1,1,1,1" HasShadow="True" BorderColor="#2ecc71" WidthRequest="100" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" >
+                                <StackLayout x:Name="MonthlySubSL" Spacing="0" WidthRequest="100" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                                    <StackLayout Spacing="0"  BackgroundColor="#2ecc71" VerticalOptions="CenterAndExpand">
+                                        <Label x:Name="DealAmountMonthly" Text="MOST POPULAR" TextColor="White" HorizontalTextAlignment="Center" FontSize="16" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,5"/>
+                                    </StackLayout>
+                                    <StackLayout Padding="5,15,5,15" BackgroundColor="Transparent" >
+                                        <Label Text="MONTHLY" TextColor="White" HorizontalTextAlignment="Center" FontSize="11" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,0"/>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+                                            <Label x:Name="monthlyMonthlyCost" Text="Error" TextColor="#00bbcb" HorizontalTextAlignment="Center" FontSize="10" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,0" VerticalOptions="End"/>
+                                            <Label Text="/month" TextColor="#00bbcb" HorizontalTextAlignment="Center" FontSize="8" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,2" VerticalOptions="End"/>
+                                        </StackLayout>
+                                        <Label x:Name="monthlyCost" Text="billed" TextColor="White" HorizontalTextAlignment="Center" FontSize="9" FontFamily="AvenirNextCondensed" Margin="0,0,0,0"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="1,1,1,1" HasShadow="True" BorderColor="#2ecc71" WidthRequest="120" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                                <StackLayout x:Name="YearlySubSL" Spacing="0" WidthRequest="120" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                                    <StackLayout Spacing="0"  BackgroundColor="#2ecc71" VerticalOptions="CenterAndExpand">
+                                        <Label x:Name="DealAmount" Text="MOST POPULAR" TextColor="White" HorizontalTextAlignment="Center" FontSize="20" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,5"/>
+                                    </StackLayout>
+                                    <StackLayout Padding="5,15,5,15" BackgroundColor="Transparent">
+                                        <Label Text="YEARLY" TextColor="White" HorizontalTextAlignment="Center" FontSize="15" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,0"/>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+                                            <Label x:Name="yearlyMonthlyCost" Text="Error" TextColor="#00bbcb" HorizontalTextAlignment="Center" FontSize="15" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,0" VerticalOptions="End"/>
+                                            <Label Text="/year" TextColor="#00bbcb" HorizontalTextAlignment="Center" FontSize="9" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,3" VerticalOptions="End" />
+                                        </StackLayout>
+                                        <Label x:Name="yearlyCost" Text="billed" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="AvenirNextCondensed" Margin="0,0,0,0"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <Label Text="This badass discount is our special gift to you" TextColor="White" HorizontalTextAlignment="Center" FontSize="14"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"  Margin="0,15,0,2"/>
+                        <Label Text="You won't find this exclusive offer anywhere else" TextColor="White" HorizontalTextAlignment="Center" FontSize="13"  FontFamily="AvenirNextCondensed"  Margin="0,2,0,2"/>
+                        <Label Text="We can only make this available for a limited time" TextColor="White" HorizontalTextAlignment="Center" FontSize="13"  FontFamily="AvenirNextCondensed"  Margin="0,2,0,2"/>
+                        <Label x:Name="Timer" IsVisible="False" Text="" TextColor="White" HorizontalTextAlignment="Center" FontSize="14"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,0,0,20"/>
+
+                        <StackLayout Spacing="0" HorizontalOptions="CenterAndExpand" WidthRequest="280" Margin="0,15,0,0">
+                            <Button x:Name="GoBtn" Text="CLAIM MY DISCOUNT" Clicked="StartFreeTrial_Clicked" HeightRequest="46"  WidthRequest="280" FontSize="16" BackgroundColor="#00BBCB" BorderRadius="23" TextColor="White" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                        </StackLayout>
+                        
+                        <StackLayout Spacing="0" Margin="0,40,0,0" Padding="10,0,10,0">
+                            <StackLayout Spacing="5" >
+                                <Label Text="Recurring billing, cancel anytime." TextColor="#939598" HorizontalTextAlignment="Center" FontSize="11" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                                <Label Text="Memberships include access to all programs available on the App. Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable. By continuing you accept our " TextColor="#939598" HorizontalTextAlignment="Center" FontSize="10" FontFamily="AvenirNextCondensed" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Spacing="3" HorizontalOptions="CenterAndExpand" Margin="0,-15,0,0">
+                                <StackLayout Spacing="0" HorizontalOptions="Center" >
+                                    <Button Text="terms of use," Clicked="TermsOfUse_Clicked" TextColor="#939598" FontSize="10" FontFamily="AvenirNextCondensed" />
+                                    <StackLayout HeightRequest="1" BackgroundColor="#939598" Margin="0,-18,0,0" />
+                                </StackLayout>
+                                <StackLayout Spacing="0" HorizontalOptions="Center">
+                                    <Button Text="privacy policies," Clicked="PrivacyPolicies_Clicked" TextColor="#939598" FontSize="10" FontFamily="AvenirNextCondensed" />
+                                    <StackLayout HeightRequest="1" BackgroundColor="#939598" Margin="0,-18,0,0" />
+                                </StackLayout>
+                                <StackLayout Spacing="0" HorizontalOptions="Center">
+                                    <Button Text="and billing terms." Clicked="BillingTerms_Clicked" TextColor="#939598" FontSize="10" FontFamily="AvenirNextCondensed" />
+                                    <StackLayout HeightRequest="1" BackgroundColor="#939598" Margin="0,-18,0,0" />
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>                       
+                    
+
+                        <StackLayout  HorizontalOptions="Center" WidthRequest="300" Spacing="0" Margin="0,40,0,10" Padding="7,0,7,0">
+                            <Label Text="RESULTS COME NATURALLY" TextColor="White" HorizontalTextAlignment="Center" FontSize="16"  FontFamily="AvenirNextCondensed" Margin="0,0,0,5" />
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/website2/img/testimonial5.jpg" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Anna's results with Lady Hammer" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>
+
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout  >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/website2/img/Rikki.jpg" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Rikki's results with Tea Cuk" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>
+
+                            <!--<Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout  >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/website2/img/testimonial3.jpg" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Taylor's results with Ashley Flores" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>-->
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout  >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/ashleyf/tay_lynn.png" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Taylor's results with Ashley Flores" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>
+
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/website2/img/testimonial2.jpg" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Tori's results with Nichole Freeman" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/website2/img/Jacqueline.JPG" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Jacqueline's results with Anne Phung" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout  >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/ashleyf/boyer.png" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Keleigh's results with Ashley Flores" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>
+
+                            <Frame CornerRadius="7" IsClippedToBounds="True" Padding="0">
+                                <StackLayout  >
+                                    <ffimageloading:CachedImage Source="https://thecartelle.azureedge.net/cdn/website2/img/testimonial1.jpg" Aspect="AspectFill" RetryCount="5" RetryDelay="250" BitmapOptimizations="true"  />
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Jenny's Results with Nichole Freeman" TextColor="White" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" Margin="0,5,0,20"/>
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+        </StackLayout>
+    </AbsoluteLayout>
+
+
+
+</d:BaseContentPage>

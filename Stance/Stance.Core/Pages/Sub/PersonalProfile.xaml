@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:d="clr-namespace:Stance.Utils"   
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stance.Pages.Sub.PersonalProfile"
+             Title="PROFILE">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label x:Name="Title" TextColor="White" HorizontalTextAlignment="Center"
+                   FontSize="Body" HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"   />
+            <Image  Margin="0,0,2,0"   BackgroundColor="Transparent" WidthRequest="40"  />
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <StackLayout Spacing="0" Padding="0,0,0,0" BackgroundColor="#D6D8D8">
+
+        <!--<StackLayout HeightRequest="40" BackgroundColor="#007077" HorizontalOptions="FillAndExpand" Spacing="0" Orientation="Horizontal" Padding="10,0,10,0">
+        -->
+        <!--<StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Spacing="0">
+          <Button Text="Edit" HorizontalOptions="End" Clicked="EditBtn_Clicked" TextColor="White" FontSize="20"   />
+        </StackLayout>-->
+        <!--
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="0">
+          <Label Text="PROFILE" FontSize="24" TextColor="White" FontFamily="AvenirNextCondensed-Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="30,0,0,0" />
+        </StackLayout>
+        <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="End" Spacing="0">
+          <Button Image="Delete-32.png" HorizontalOptions="End" Clicked="ExitBtn_Clicked" TextColor="Black" FontSize="20"   />
+        </StackLayout>
+      </StackLayout>-->
+
+        <StackLayout x:Name="ProfileInfo"  HorizontalOptions="CenterAndExpand" Padding="0,0,0,0" >
+            <TableView x:Name="TableViewMain" Intent="Data">
+                <TableRoot>
+                    <TableSection Title="Your Profile Information">
+                        <ViewCell>
+                            <StackLayout Padding="0,10,0,10">
+                                <Image x:Name="UserImg" Source="Profile_64_pix.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" Opacity="0.5"  />
+                            </StackLayout>
+                        </ViewCell>
+                    <!--</TableSection>
+
+                    <TableSection Title="Your Profile Information">-->
+
+                        <TextCell x:Name="Email" Text="Email"  />
+                        <TextCell x:Name="FirstName" Text="First Name"  />
+                        <!--<TextCell x:Name="LastName" Text="Last Name"  />-->
+                        <TextCell x:Name="InstagramHandle" Text="Instagram Handle"  />
+                        <TextCell x:Name="Birthdate" Text="Birthday"  />
+                        <TextCell x:Name="Gender" Text="Gender"  />
+                        <!--<TextCell x:Name="TimeZone" Text="Time Zone"  />-->
+                        <TextCell x:Name="Height" Text="Height (cm)"  />
+                        <TextCell x:Name="Weight" Text="Weight (lbs)"  />
+                        <TextCell x:Name="TrainingGoal" Text="Training Goal"  />
+                        <TextCell x:Name="Region" Text="Region" />
+
+                        <ViewCell>
+                            <StackLayout x:Name="EditSL" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" Padding="0,3,0,3">
+                                <Button x:Name="EditBtn" Text="EDIT PROFILE" Clicked="EditBtn_Clicked"   HeightRequest="36"  WidthRequest="200" FontSize="13" HorizontalOptions="Center" BackgroundColor="#00BBCB" BorderColor="#3E8DB2" BorderRadius="18" BorderWidth="1" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>                                
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout x:Name="FillerSL" />
+                        </ViewCell>
+
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+
+    </StackLayout>
+
+
+</d:BaseContentPage>

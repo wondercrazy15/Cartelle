@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" 
+             x:Class="Stance.Pages.Sub.FabInFivePage">
+
+    <AbsoluteLayout BackgroundColor="#17191A" x:Name="MainContainer">
+        <Image Source="blurredBG3x.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+        <o:VideoPlayer x:Name="VideoPlayID" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" AutoPlay="True" DisplayControls="False" BackgroundColor="#17191A" FillMode="ResizeAspect" Repeat="False" Volume="100" />
+
+        <StackLayout  x:Name="FirstSL" AbsoluteLayout.LayoutBounds="0.5,0.95,260,100" AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="False">
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="60" WidthRequest="260" >
+                <Button x:Name="ExitBtn" Text="SETUP MY PROFILE" Clicked="ExitBtn_Clicked" HeightRequest="60"  WidthRequest="260" FontSize="16" BackgroundColor="#2ecc71" BorderRadius="30" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="GiftSL" IsVisible="False" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Spacing="0">
+
+            <ScrollView x:Name="mainScrollView">
+                <StackLayout Spacing="0">
+                <StackLayout Spacing="0" Margin="0,60,0,0" >
+                    <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,0,0,0" >
+                        <Image  Source="giftbox.png" WidthRequest="140" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Spacing="0" Margin="0,10,0,20">
+                    <StackLayout Spacing="5" Padding="20,0,20,0" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Ready To Change Your Life?" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" FontSize="22" TextColor="White" HorizontalOptions="Center" />
+                        <Label Text="It All Starts With Your First Workout!" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" FontSize="28" TextColor="White" HorizontalTextAlignment="Center" Margin="0,10,0,0"/>
+                        <Label x:Name="ExplainationText" Text="Those Who Complete Their First Workout Are Significantly More Likely To Stick With It And Achieve Their Fitness Goals. We Want You To Succeed So Badly That We Have A Special Gift For You To Make It Easy To Stick With It" 
+                               FontSize="17"  FontFamily="AvenirNextCondensed" TextColor="White" HorizontalTextAlignment="Center" Margin="0,20,0,0 "/>
+                        <StackLayout HorizontalOptions="Center" Spacing="0" Orientation="Horizontal" Margin="0,30,0,20">
+                                <Button x:Name="HowToVideoBtn" Text="DOWNLOAD MY WORKOUT" Clicked="HowToVideoBtn_Clicked" HeightRequest="60"  WidthRequest="260" FontSize="16" BackgroundColor="#2ecc71" BorderRadius="30" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <Label Text="Your exclusive FAB in FIVE gift awaits" TextColor="White" HorizontalTextAlignment="Center" FontSize="14" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold" />
+                    </StackLayout>
+                </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </AbsoluteLayout>
+
+</ContentPage>

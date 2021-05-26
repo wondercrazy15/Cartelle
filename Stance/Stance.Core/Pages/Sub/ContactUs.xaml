@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils"                 
+             x:Class="Stance.Pages.Sub.ContactUs"
+             Title="SUPPORT">
+     <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label x:Name="Title" TextColor="White" HorizontalTextAlignment="Center"
+                   FontSize="Body" HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"   />
+            <Image  Margin="0,0,2,0"   BackgroundColor="Transparent" WidthRequest="40"  />
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <StackLayout Spacing="0" BackgroundColor="#D6D8D8">
+        <ScrollView>
+            <StackLayout>
+                <StackLayout x:Name="FormSL" Spacing="6" Padding="10,10,10,10">
+                    <Label x:Name="ContactUsText" IsVisible="False" Text="90% of all user reported issues are resolved by Logging Out or Refreshing the App" TextColor="#17191A" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold"/>
+
+                    <ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+                    <Label x:Name="FormValidationSpecialMessage" TextColor="Red" HorizontalTextAlignment="Center" FontSize="13" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                    <Entry BackgroundColor="White" x:Name="SubjectInput" Keyboard="Text" Placeholder="Subject" />
+                    <Editor BackgroundColor="White" x:Name="MessageText" VerticalOptions="FillAndExpand" />
+
+                    <StackLayout  HorizontalOptions="Center" WidthRequest="120" Spacing="0" Margin="0,7,0,5">
+                        <Button x:Name="Submit" Text="SEND" Clicked="Submit_Clicked"   HeightRequest="36"  WidthRequest="60" FontSize="13" BackgroundColor="#00BBCB" BorderColor="#3E8DB2" BorderRadius="18" BorderWidth="1" TextColor="White"  FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                    </StackLayout>
+
+
+                    <Label x:Name="SendText" Text="We will review your message and get back to you as soon as we can." TextColor="#909090" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="12" FontFamily="HelveticalNeue-Bold"/>
+                </StackLayout>
+                <StackLayout x:Name="MessageSentSL" Padding="30,150,30,20" Spacing="20">
+                    <Label Text="We've received your message and will get back to you as soon as we can." TextColor="#909090" HorizontalTextAlignment="Center" FontSize="22" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+
+                    <Label Text="Note: 90% of all user reported issues are resolved by Logging Out or Refreshing the App" TextColor="#909090" HorizontalTextAlignment="Center" FontSize="22" FontFamily="HelveticalNeue-Bold" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
+    </StackLayout>
+
+</d:BaseContentPage>

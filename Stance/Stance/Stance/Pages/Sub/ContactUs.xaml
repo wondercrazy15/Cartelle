@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:Stance.Utils;assembly=Stance.Utils"                   
+             x:Class="Stance.Pages.Sub.ContactUs"
+             Title="SUPPORT">
+
+  <StackLayout Spacing="0" BackgroundColor="#007077">
+    <ScrollView>
+      <StackLayout>
+        <StackLayout x:Name="FormSL" Spacing="6" Padding="10,10,10,10">
+          <ActivityIndicator x:Name="Spinner" HorizontalOptions="CenterAndExpand" Color="White" IsRunning="True" />
+          <Label x:Name="FormValidationSpecialMessage" TextColor="Red" HorizontalTextAlignment="Center" FontSize="13" FontFamily="AvenirNextCondensed"/>
+          <Entry x:Name="SubjectInput" Keyboard="Text" Placeholder="Subject" />
+          <Editor x:Name="MessageText" VerticalOptions="FillAndExpand" />
+          <Button x:Name="Submit" Text="SEND" FontSize="22" BorderColor="White" BorderWidth="1" TextColor="White" Clicked="Submit_Clicked" FontFamily="AvenirNextCondensed-Bold"/>
+          <Label x:Name="SendText" Text="We will review your message and get back to you as soon as we can." TextColor="White" HorizontalTextAlignment="Center" FontSize="12" FontFamily="AvenirNextCondensed"/>
+        </StackLayout>
+        <StackLayout x:Name="MessageSentSL" Padding="50,150,50,20">
+          <Label Text="YOUR MESSAGE HAS BEEN SENT" TextColor="White" HorizontalTextAlignment="Center" FontSize="22" FontFamily="AvenirNextCondensed" />
+        </StackLayout>
+      </StackLayout>
+
+    </ScrollView>
+  </StackLayout>
+
+</d:BaseContentPage>
